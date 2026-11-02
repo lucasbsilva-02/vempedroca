@@ -1,0 +1,378 @@
+{
+ "schema": 1,
+ "id": "reino-numeros-1",
+ "worldId": "reino-numeros",
+ "title": "A Ponte das Operações",
+ "order": 1,
+ "discipline": "Matemática",
+ "grade": "6º ano",
+ "difficulty": 1,
+ "competency": "Operações com números naturais e resolução de problemas contextualizados",
+ "objective": "Escolher a operação adequada, resolver problemas em etapas e conferir se o resultado faz sentido.",
+ "narrative": "A grande ponte do Reino dos Números desabou! Para reconstruí-la, cada trecho exige contas certas. Ajude o Rei a calcular tábuas, moedas e carpinteiros.",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "recife",
+  "skyTint": 10477823,
+  "tint": 11065536,
+  "midTint": 12116136,
+  "far": [
+   "pred1",
+   "pred3",
+   "pred8",
+   "pred5",
+   "pred7",
+   "sinagoga",
+   "pred2"
+  ],
+  "mid": [
+   "wverde",
+   "wverdeclaro",
+   "wamarelo",
+   "wverde"
+  ]
+ },
+ "boss": {
+  "name": "Rataão Contador",
+  "intro": "O Rataão Contador quer embaralhar as contas da ponte! Resolva os problemas para reconstruí-la.",
+  "requiredCorrect": 3,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "O Rei tem 200 moedas e a obra custa 480. Quantas moedas ainda faltam?",
+    "options": [
+     "280",
+     "680",
+     "240",
+     "320"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Faltam 480 − 200 = 280 moedas.",
+    "hint": "Para saber quanto falta, compare o que se tem com o que se precisa: qual operação?"
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Se 480 moedas forem divididas igualmente entre 6 carpinteiros, quanto recebe cada um?",
+    "options": [
+     "60 moedas",
+     "80 moedas",
+     "86 moedas",
+     "96 moedas"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! 480 ÷ 6 = 80. Confira: 6 × 80 = 480.",
+    "hint": "Repartir em partes iguais pede divisão. Depois confira multiplicando."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Qual expressão representa 'o triplo de 25, menos 10'?",
+    "options": [
+     "3 × (25 − 10)",
+     "3 × 25 − 10",
+     "(3 + 25) − 10",
+     "25 ÷ 3 − 10"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! O triplo de 25 é 3 × 25 = 75; menos 10 resulta em 65.",
+    "hint": "Primeiro calcule o triplo; só depois subtraia."
+   }
+  ]
+ },
+ "bncc": {
+  "code": "",
+  "description": "Proposta pedagógica editável — ainda não validada com a BNCC.",
+  "validated": false
+ },
+ "tiles": [
+  "............................................................................................................",
+  "............................................................................................................",
+  "............................................................................................................",
+  "............................................................................................................",
+  "............................................................................................................",
+  "............................................................................................................",
+  "............................................................................................................",
+  ".................................--.........................................................................",
+  "........................----........................----........................----........................",
+  "............................................................................................................",
+  "########################...#########################...#########################...#########################",
+  "########################...#########################...#########################...#########################"
+ ],
+ "objects": [
+  {
+   "id": "start",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 8,
+   "y": 9,
+   "title": "Dica: ler o problema",
+   "text": "Leia o problema, separe os dados e escolha a operação. Quantidades iguais repetidas pedem multiplicação; repartir em partes iguais pede divisão; juntar pede adição; comparar quanto falta pede subtração."
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 58,
+   "y": 9,
+   "title": "Dica: conferir o resultado",
+   "text": "Depois de calcular, volte ao enunciado e pergunte: a resposta faz sentido? Um preço total não pode ser menor que o preço de uma só peça."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 14,
+   "y": 9,
+   "title": "Engenheira Pitomba explica a obra",
+   "text": "A ponte tem 4 trechos. Cada trecho precisa de 15 tábuas, e cada tábua custa 8 moedas. O Rei já guardou 200 moedas para a obra. Os carpinteiros dividirão o pagamento em partes iguais."
+  },
+  {
+   "id": "c1",
+   "type": "collectible",
+   "x": 20,
+   "y": 7
+  },
+  {
+   "id": "c2",
+   "type": "collectible",
+   "x": 25,
+   "y": 6
+  },
+  {
+   "id": "c3",
+   "type": "collectible",
+   "x": 29,
+   "y": 9
+  },
+  {
+   "id": "c4",
+   "type": "collectible",
+   "x": 42,
+   "y": 8
+  },
+  {
+   "id": "c5",
+   "type": "collectible",
+   "x": 53,
+   "y": 6
+  },
+  {
+   "id": "c6",
+   "type": "collectible",
+   "x": 60,
+   "y": 9
+  },
+  {
+   "id": "c7",
+   "type": "collectible",
+   "x": 75,
+   "y": 8
+  },
+  {
+   "id": "c8",
+   "type": "collectible",
+   "x": 81,
+   "y": 6
+  },
+  {
+   "id": "c9",
+   "type": "collectible",
+   "x": 90,
+   "y": 9
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 43,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "Quantas tábuas são necessárias para os 4 trechos?",
+    "options": [
+     "45",
+     "60",
+     "19",
+     "64"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! São 4 trechos com 15 tábuas cada: 4 × 15 = 60 tábuas.",
+    "hint": "Quantidades iguais repetidas: qual operação usar?"
+   }
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 74,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "Quanto custam todas as tábuas da ponte?",
+    "options": [
+     "68 moedas",
+     "420 moedas",
+     "480 moedas",
+     "520 moedas"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! São 60 tábuas a 8 moedas cada: 60 × 8 = 480 moedas.",
+    "hint": "Use o total de tábuas que você descobriu antes."
+   }
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 44,
+   "y": 9
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 66,
+   "y": 9
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 86,
+   "y": 9
+  },
+  {
+   "id": "ob1",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 38,
+   "y": 9
+  },
+  {
+   "id": "ob2",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 70,
+   "y": 9
+  },
+  {
+   "id": "ob3",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 95,
+   "y": 9
+  },
+  {
+   "id": "d1",
+   "type": "decor",
+   "asset": "banco",
+   "x": 6,
+   "y": 9
+  },
+  {
+   "id": "d2",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 12,
+   "y": 9
+  },
+  {
+   "id": "d3",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 19,
+   "y": 9
+  },
+  {
+   "id": "d4",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 31,
+   "y": 9
+  },
+  {
+   "id": "d5",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 36,
+   "y": 9
+  },
+  {
+   "id": "d6",
+   "type": "decor",
+   "asset": "banco",
+   "x": 47,
+   "y": 9
+  },
+  {
+   "id": "d7",
+   "type": "decor",
+   "asset": "mato4",
+   "x": 56,
+   "y": 9
+  },
+  {
+   "id": "d8",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 62,
+   "y": 9
+  },
+  {
+   "id": "d9",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 74,
+   "y": 9
+  },
+  {
+   "id": "d10",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 78,
+   "y": 9
+  },
+  {
+   "id": "d11",
+   "type": "decor",
+   "asset": "banco",
+   "x": 88,
+   "y": 9
+  },
+  {
+   "id": "d12",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 92,
+   "y": 9
+  },
+  {
+   "id": "boss",
+   "type": "boss",
+   "x": 100,
+   "y": 9
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "A ponte caiu! Separe os dados antes de calcular.",
+   "renata": "Antes de fazer a conta, entende o problema, Pedroca."
+  },
+  {
+   "x": 45,
+   "pedroca": "Multiplicar é somar parcelas iguais. Lembra?",
+   "renata": "Quantidade igual repetida? Pensa em multiplicação."
+  },
+  {
+   "x": 90,
+   "pedroca": "Confere a conta antes de responder, parceiro.",
+   "renata": "Faz a prova real: a resposta faz sentido?"
+  }
+ ]
+}

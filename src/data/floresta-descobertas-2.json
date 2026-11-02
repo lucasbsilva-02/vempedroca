@@ -1,0 +1,292 @@
+{
+ "schema": 1,
+ "id": "floresta-descobertas-2",
+ "worldId": "floresta-descobertas",
+ "title": "A Teia do Manguezal",
+ "order": 2,
+ "discipline": "Ciências",
+ "grade": "5º ano",
+ "difficulty": 2,
+ "competency": "Cadeias alimentares e a importância do manguezal",
+ "objective": "Reconhecer produtores, consumidores e decompositores, montar cadeias alimentares simples e entender por que o manguezal é um berçário da vida.",
+ "narrative": "No manguezal do Capibaribe, o Rataão está desmanchando a teia da vida para vender caranguejo fora de época. Suba pelos cipós, entenda quem come quem e salve o mangue!",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "mata",
+  "biome": "mata",
+  "skyTint": 13107135,
+  "tint": 5476218,
+  "midTint": 7378016
+ },
+ "bncc": {
+  "code": "EF04CI04",
+  "description": "Sugestão: analisar e construir cadeias alimentares simples, reconhecendo a posição ocupada pelos seres vivos e o papel do Sol como fonte de energia. Proposta ainda não validada.",
+  "validated": false
+ },
+ "tiles": [
+  "............................................................................................................................................................",
+  "............................................................................................................................................................",
+  "............................................................................................................................................................",
+  "............................................................................................................................................................",
+  "............................................................................................................................................................",
+  "............................................................................................................................................................",
+  "..................HGGGGGG.........................................................................HGGGGGGGGH................................................",
+  "..................HGGGGGG.........................................................................HGGGGGGGGH................................................",
+  "..................HGGGGGG.........................................................................HGGGGGGGGH................................................",
+  "..................HGGGGGG.........................................................................HGGGGGGGGH................................................",
+  "###################GGGGGG##############################~~~~~~~#####################################GGGGGGGG#################################################",
+  "###################GGGGGG##############################~~~~~~~#####################################GGGGGGGG#################################################"
+ ],
+ "objects": [
+  {
+   "id": "start144",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 7,
+   "y": 9,
+   "title": "Dica: quem produz",
+   "text": "Plantas e algas são produtoras: usam a luz do sol para fabricar o próprio alimento. Todos os outros seres vivos dependem delas, direta ou indiretamente."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 12,
+   "y": 9,
+   "title": "Guarda-Pitomba no mangue",
+   "text": "Barranco alto? Agarra no cipó e sobe! (Seta para cima ou W; no celular, segure PULAR.) Lá em cima tem caranguejo, garça e muita folha caindo: cada um tem seu lugar na teia."
+  },
+  {
+   "id": "collectible145",
+   "type": "collectible",
+   "x": 20,
+   "y": 5
+  },
+  {
+   "id": "collectible146",
+   "type": "collectible",
+   "x": 21,
+   "y": 5
+  },
+  {
+   "id": "collectible147",
+   "type": "collectible",
+   "x": 22,
+   "y": 5
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 28,
+   "y": 9
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 34,
+   "y": 7,
+   "title": "Bloco obrigatório",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "Numa cadeia alimentar, quem produz o próprio alimento usando a luz do sol?",
+    "options": [
+     "O caranguejo",
+     "A garça",
+     "As plantas e as algas",
+     "Os fungos"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! Plantas e algas são os produtores: fazem fotossíntese com a luz do sol.",
+    "hint": "Releia a primeira placa da fase."
+   },
+   "required": true
+  },
+  {
+   "id": "mover148",
+   "type": "mover",
+   "x": 55,
+   "y": 9,
+   "w": 3,
+   "dx": 4,
+   "speed": 0.9,
+   "kind": "canoa"
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 65,
+   "y": 9,
+   "title": "Dica: quem come quem",
+   "text": "Numa cadeia alimentar a energia passa de um ser vivo para outro: folhas do mangue → caranguejo → garça. O caranguejo é consumidor primário; a garça, que come o caranguejo, é consumidora secundária."
+  },
+  {
+   "id": "g1",
+   "type": "gate",
+   "kind": "wall",
+   "x": 71,
+   "y": 9,
+   "w": 2,
+   "requires": "q1"
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 93,
+   "y": 9
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 102,
+   "y": 3,
+   "title": "Bloco de pergunta (opcional)",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "Fungos e bactérias que transformam folhas mortas em nutrientes para o solo são chamados de:",
+    "options": [
+     "Produtores",
+     "Decompositores",
+     "Predadores",
+     "Herbívoros"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Os decompositores devolvem os nutrientes ao ambiente.",
+    "hint": "Eles 'decompõem' o que morreu."
+   }
+  },
+  {
+   "id": "sign3",
+   "type": "sign",
+   "x": 111,
+   "y": 9,
+   "title": "Dica: o berçário",
+   "text": "O manguezal é chamado de berçário do mar: muitos peixes, camarões e caranguejos nascem e crescem protegidos entre as raízes do mangue."
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 116,
+   "y": 9
+  },
+  {
+   "id": "boss149",
+   "type": "boss",
+   "x": 150,
+   "y": 9
+  },
+  {
+   "id": "d150",
+   "type": "decor",
+   "x": 9,
+   "y": 9,
+   "asset": "mato3"
+  },
+  {
+   "id": "d151",
+   "type": "decor",
+   "x": 37,
+   "y": 9,
+   "asset": "mato2"
+  },
+  {
+   "id": "d152",
+   "type": "decor",
+   "x": 109,
+   "y": 9,
+   "asset": "mato1"
+  },
+  {
+   "id": "npcg153",
+   "type": "npc",
+   "x": 68,
+   "y": 9,
+   "title": "Guarda-Pitomba no portão do mangue",
+   "text": "Este portão só abre para quem responde o bloco laranja lá atrás: quem produz o próprio alimento com a luz do sol?"
+  },
+  {
+   "id": "cordel1",
+   "type": "cordel",
+   "x": 106,
+   "y": 5,
+   "title": "A Teia do Mangue",
+   "text": "No mangue a folha cai,\no caranguejo vem comer;\na garça desce e sai\ncom o caranguejo pra viver.\nO fungo devolve à lama\no que ajuda a crescer."
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Barranco alto, Renata! Agarra no cipó e sobe.",
+   "renata": "Pedroca, olha o cipó! Segura e sobe, visse?"
+  },
+  {
+   "x": 30,
+   "pedroca": "Folha, caranguejo, garça: cada um come o anterior.",
+   "renata": "Folha vira comida de caranguejo, que vira comida de garça!"
+  },
+  {
+   "x": 137,
+   "pedroca": "O Rataão tá no mangue! Lembra da teia.",
+   "renata": "Rataão à vista! Pensa em quem come quem."
+  }
+ ],
+ "boss": {
+  "name": "Rataão do Mangue",
+  "intro": "O Rataão do Mangue quer bagunçar a teia da vida! Mostre como ela funciona.",
+  "requiredCorrect": 3,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Na cadeia 'folhas do mangue → caranguejo → garça', a garça é:",
+    "options": [
+     "Produtora",
+     "Consumidora secundária",
+     "Decompositora",
+     "Consumidora primária"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! A garça come o caranguejo, que comeu as folhas: ela é consumidora secundária.",
+    "hint": "Conte quantos 'passos' a garça está depois das folhas."
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Se os caranguejos sumissem do mangue, o que aconteceria com as garças que se alimentam deles?",
+    "options": [
+     "Teriam mais comida",
+     "Teriam menos comida",
+     "Nada mudaria",
+     "Virariam produtoras"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Quando um elo da cadeia some, quem depende dele fica com menos alimento.",
+    "hint": "A garça come o caranguejo."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Por que o manguezal é chamado de 'berçário'?",
+    "options": [
+     "Porque lá não vive nenhum animal",
+     "Porque muitos peixes, camarões e caranguejos nascem e crescem protegidos entre suas raízes",
+     "Porque a água do mangue é sempre doce",
+     "Porque só tem plantas pequenas"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! As raízes do mangue protegem os filhotes de muitas espécies.",
+    "hint": "Releia a última placa antes da arena."
+   }
+  ]
+ },
+ "artifact": {
+  "name": "Caderno de campo de Vasconcelos Sobrinho",
+  "text": "O pernambucano João Vasconcelos Sobrinho (1908–1989) foi um dos pioneiros da ecologia e da defesa do meio ambiente no Brasil."
+ }
+}

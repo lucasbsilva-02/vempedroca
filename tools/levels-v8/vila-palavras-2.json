@@ -1,0 +1,393 @@
+{
+ "schema": 1,
+ "id": "vila-palavras-2",
+ "worldId": "vila-palavras",
+ "title": "O Mistério da Biblioteca",
+ "order": 2,
+ "discipline": "Língua Portuguesa",
+ "grade": "6º ano",
+ "difficulty": 1,
+ "competency": "Interpretação de textos: informações explícitas, inferências e construção de sentidos",
+ "objective": "Ler pistas, localizar informações no texto e inferir o que não está escrito de forma direta.",
+ "narrative": "A biblioteca do bairro amanheceu com uma estante vazia: o livro de receitas do Vovô Zé sumiu! Siga as pistas, leia os bilhetes e descubra quem foi.",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "recife",
+  "skyTint": 16756361,
+  "tint": 16763296,
+  "midTint": 14198928,
+  "far": [
+   "sinagoga",
+   "cinema",
+   "pred6",
+   "pred2",
+   "pred7",
+   "pred5",
+   "pred8"
+  ],
+  "mid": [
+   "wvermelho",
+   "wlaranja",
+   "wamarelo",
+   "wvermelho"
+  ]
+ },
+ "boss": {
+  "name": "Rataão Traça-de-Livros",
+  "intro": "O Rataão estava escondido entre os livros! Responda sobre a carta e as pistas para recuperar o livro de receitas.",
+  "requiredCorrect": 3,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Segundo a carta, por que o autor levou o livro?",
+    "options": [
+     "Para vender na feira",
+     "Para aprender a fazer bolo de rolo",
+     "Para esconder da bibliotecária",
+     "Para escrever uma nova história"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! A própria carta explica o motivo: aprender a fazer bolo de rolo.",
+    "hint": "Releia a frase que começa com 'É que a estante'."
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Em 'não levei o livro por maldade', a palavra 'maldade' é o contrário de:",
+    "options": [
+     "Pressa",
+     "Tristeza",
+     "Bondade",
+     "Curiosidade"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! Maldade é o oposto de bondade: o autor diz que não agiu com a intenção de fazer mal.",
+    "hint": "Pense na palavra que combina com 'fazer o bem'."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Quando o autor escreve 'Devolverei o livro ao amanhecer', podemos concluir que ele:",
+    "options": [
+     "Pretende devolver o livro no dia seguinte, bem cedo",
+     "Nunca vai devolver o livro",
+     "Já devolveu o livro ontem",
+     "Vai devolver o livro à noite"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Amanhecer é o começo do dia. A carta não diz 'amanhã cedo', mas dá a pista para concluir isso.",
+    "hint": "O que significa 'amanhecer'?"
+   }
+  ]
+ },
+ "bncc": {
+  "code": "",
+  "description": "Proposta pedagógica editável — ainda não validada com a BNCC.",
+  "validated": false
+ },
+ "tiles": [
+  "................................................................................................................",
+  "................................................................................................................",
+  "................................................................................................................",
+  "................................................................................................................",
+  "................................................................................................................",
+  "................................................................................................................",
+  "................................................................................................................",
+  "..............................................--................................................................",
+  "....................--..--........................--.......................--..--...............................",
+  "................................................................................................................",
+  "#####################...#######################...##########################...#################################",
+  "#####################...#######################...##########################...#################################"
+ ],
+ "objects": [
+  {
+   "id": "start",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 8,
+   "y": 9,
+   "title": "Dica: leia as pistas",
+   "text": "Em um mistério, cada detalhe importa: horários, lugares e objetos. Anote mentalmente o que o texto diz de forma direta e depois pense no que essas pistas sugerem."
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 70,
+   "y": 9,
+   "title": "Dica: ler o que não está escrito",
+   "text": "Inferir é ligar pistas para chegar a uma ideia que o texto não diz com todas as letras. Pergunte-se: o que isso mostra? O que provavelmente aconteceu?"
+  },
+  {
+   "id": "sign3",
+   "type": "sign",
+   "x": 96,
+   "y": 9,
+   "title": "Carta encontrada na estante",
+   "text": "Querido leitor, não levei o livro por maldade. É que a estante da minha toca estava vazia e eu queria aprender a fazer bolo de rolo. Devolverei o livro ao amanhecer. — Um amigo que adora cozinhar"
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 14,
+   "y": 9,
+   "title": "Guarda-Pitomba lê o bilhete",
+   "text": "Ontem, às cinco da tarde, a bibliotecária Dona Lúcia trancou a porta e deixou a janela dos fundos entreaberta para o gato tomar sol. Hoje cedo, o livro de receitas do Vovô Zé sumiu da estante. No chão, havia migalhas de pão e pequenas pegadas de patas minúsculas que iam até a janela."
+  },
+  {
+   "id": "c1",
+   "type": "collectible",
+   "x": 18,
+   "y": 7
+  },
+  {
+   "id": "c2",
+   "type": "collectible",
+   "x": 25,
+   "y": 7
+  },
+  {
+   "id": "c3",
+   "type": "collectible",
+   "x": 28,
+   "y": 9
+  },
+  {
+   "id": "c4",
+   "type": "collectible",
+   "x": 45,
+   "y": 6
+  },
+  {
+   "id": "c5",
+   "type": "collectible",
+   "x": 52,
+   "y": 7
+  },
+  {
+   "id": "c6",
+   "type": "collectible",
+   "x": 62,
+   "y": 8
+  },
+  {
+   "id": "c7",
+   "type": "collectible",
+   "x": 77,
+   "y": 6
+  },
+  {
+   "id": "c8",
+   "type": "collectible",
+   "x": 88,
+   "y": 8
+  },
+  {
+   "id": "c9",
+   "type": "collectible",
+   "x": 99,
+   "y": 9
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 35,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "A que horas Dona Lúcia trancou a biblioteca?",
+    "options": [
+     "De manhã cedo",
+     "Às cinco da tarde",
+     "Ao meio-dia",
+     "À noite"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correto! O horário está escrito de forma direta na primeira frase do bilhete.",
+    "hint": "Procure o horário logo no começo do texto."
+   }
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 90,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "Pelas pistas no chão, quem provavelmente levou o livro?",
+    "options": [
+     "Dona Lúcia, pela porta da frente",
+     "Um bichinho pequeno que entrou pela janela",
+     "O gato, sem passar pela janela",
+     "O Vovô Zé, de madrugada"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Migalhas e pegadas minúsculas até a janela sugerem um animal pequeno. O texto não diz isso diretamente: é uma inferência.",
+    "hint": "Pense no tamanho das pegadas e no lugar onde elas terminam."
+   }
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 38,
+   "y": 9
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 66,
+   "y": 9
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 92,
+   "y": 9
+  },
+  {
+   "id": "ob1",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 31,
+   "y": 9
+  },
+  {
+   "id": "ob2",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 58,
+   "y": 9
+  },
+  {
+   "id": "ob3",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 61,
+   "y": 9
+  },
+  {
+   "id": "ob4",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 86,
+   "y": 9
+  },
+  {
+   "id": "d1",
+   "type": "decor",
+   "asset": "banco",
+   "x": 6,
+   "y": 9
+  },
+  {
+   "id": "d2",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 11,
+   "y": 9
+  },
+  {
+   "id": "d3",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 17,
+   "y": 9
+  },
+  {
+   "id": "d4",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 27,
+   "y": 9
+  },
+  {
+   "id": "d5",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 34,
+   "y": 9
+  },
+  {
+   "id": "d6",
+   "type": "decor",
+   "asset": "banco",
+   "x": 41,
+   "y": 9
+  },
+  {
+   "id": "d7",
+   "type": "decor",
+   "asset": "mato4",
+   "x": 54,
+   "y": 9
+  },
+  {
+   "id": "d8",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 64,
+   "y": 9
+  },
+  {
+   "id": "d9",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 69,
+   "y": 9
+  },
+  {
+   "id": "d10",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 84,
+   "y": 9
+  },
+  {
+   "id": "d11",
+   "type": "decor",
+   "asset": "banco",
+   "x": 90,
+   "y": 9
+  },
+  {
+   "id": "d12",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 100,
+   "y": 9
+  },
+  {
+   "id": "boss",
+   "type": "boss",
+   "x": 104,
+   "y": 9
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Mistério na biblioteca! Bora atrás das pistas.",
+   "renata": "Um livro sumiu, Pedroca! Vamos procurar as pistas."
+  },
+  {
+   "x": 40,
+   "pedroca": "Pegada pequena, migalha... quem será? Junte as pistas.",
+   "renata": "Pistas juntas viram inferência. Pensa comigo!"
+  },
+  {
+   "x": 95,
+   "pedroca": "A carta explica tudo. Leia antes de encarar o Rataão.",
+   "renata": "Lê a carta ali antes do chefão, viu?"
+  }
+ ]
+}

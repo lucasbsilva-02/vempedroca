@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" width="1400" height="620" font-family="system-ui, sans-serif">
+  <title>Exemplo conceitual — Rua da Aurora (trecho do Ato 2)</title>
+  <rect width="1400" height="620" fill="#cfeefa"/>
+  <rect y="0" width="1400" height="180" fill="#9fd8f2"/>
+  <!-- casario ao fundo -->
+  <g fill="#e8d3a8" stroke="#7a6142" stroke-width="2" opacity=".55">
+    <rect x="60" y="150" width="120" height="250"/><rect x="190" y="130" width="110" height="270"/><rect x="310" y="160" width="130" height="240"/>
+    <rect x="450" y="140" width="110" height="260"/><rect x="570" y="170" width="100" height="230"/>
+  </g>
+  <text x="700" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#14001d">Rua da Aurora (área Cinema São Luiz) — trecho central da fase</text>
+  <text x="700" y="58" text-anchor="middle" font-size="14" fill="#3b2a4a">vista lateral · 1 bloco = 32 px · pulo: até 3,5 blocos de altura e 4,4 de distância</text>
+
+  <!-- chão: calçada esquerda -->
+  <rect x="0" y="400" width="690" height="34" fill="#cfc6b2" stroke="#2a1d10" stroke-width="3"/>
+  <rect x="0" y="434" width="690" height="60" fill="#8b7d6a"/>
+  <!-- avenida -->
+  <rect x="690" y="410" width="250" height="84" fill="#4a4a54"/>
+  <g fill="#fff">
+    <rect x="770" y="414" width="16" height="22"/><rect x="796" y="414" width="16" height="22"/><rect x="822" y="414" width="16" height="22"/><rect x="848" y="414" width="16" height="22"/>
+  </g>
+  <line x1="752" y1="410" x2="752" y2="440" stroke="#fff" stroke-width="4"/>
+  <text x="815" y="470" text-anchor="middle" font-size="12" fill="#fff">faixa de pedestre</text>
+  <text x="748" y="485" text-anchor="end" font-size="11" fill="#ddd">linha de retenção</text>
+  <!-- carro parado antes da linha -->
+  <g transform="translate(696 432)"><rect width="50" height="20" rx="6" fill="#d9442b" stroke="#2a1d10" stroke-width="2"/><circle cx="12" cy="22" r="6" fill="#2a1d10"/><circle cx="38" cy="22" r="6" fill="#2a1d10"/></g>
+  <!-- calçada direita (ilha) -->
+  <rect x="940" y="400" width="50" height="94" fill="#cfc6b2" stroke="#2a1d10" stroke-width="3"/>
+  <!-- ponte sobre o Capibaribe -->
+  <rect x="990" y="470" width="410" height="150" fill="#1d5fa8"/>
+  <path d="M990 500 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" stroke="#7cc0ff" stroke-width="4" fill="none"/>
+  <rect x="990" y="400" width="410" height="26" fill="#55555f" stroke="#2a1d10" stroke-width="3"/>
+  <rect x="990" y="388" width="410" height="8" fill="#e8e0cc" stroke="#2a1d10" stroke-width="2"/>
+  <g fill="#2a1d10"><rect x="1030" y="426" width="14" height="44"/><rect x="1180" y="426" width="14" height="44"/><rect x="1330" y="426" width="14" height="44"/></g>
+  <text x="1195" y="610" text-anchor="middle" font-size="13" fill="#e6f2ff">Rio Capibaribe</text>
+
+  <!-- ROTA ALTA -->
+  <g stroke="#2a1d10" stroke-width="3">
+    <rect x="300" y="300" width="80" height="12" fill="#e2603a"/><rect x="430" y="262" width="80" height="12" fill="#3aa1e2"/><rect x="560" y="230" width="90" height="12" fill="#e2b43a"/>
+    <rect x="660" y="214" width="290" height="14" fill="#b49a6a"/>
+    <rect x="660" y="228" width="10" height="172" fill="#7a6142"/><rect x="940" y="228" width="10" height="172" fill="#7a6142"/>
+  </g>
+  <text x="805" y="252" text-anchor="middle" font-size="13" font-weight="700" fill="#14001d">passarela (atravessa sem esperar o sinal)</text>
+  <g fill="#ffd23f" stroke="#7a4b00" stroke-width="2"><circle cx="250" cy="370" r="7"/><circle cx="272" cy="345" r="7"/><circle cx="294" cy="320" r="7"/><circle cx="470" cy="244" r="7"/><circle cx="740" cy="196" r="7"/><circle cx="870" cy="196" r="7"/></g>
+  <!-- bloco de ouro -->
+  <rect x="590" y="176" width="32" height="32" fill="#ffcf2e" stroke="#7a4b00" stroke-width="3"/><text x="606" y="199" text-anchor="middle" font-size="18" font-weight="700" fill="#7a4b00">?</text>
+  <text x="606" y="168" text-anchor="middle" font-size="12" fill="#7a4b00">bloco de ouro (bônus)</text>
+  <!-- setas da rota alta -->
+  <path d="M230 392 C 250 330, 280 300, 330 296 S 440 250, 470 256 S 580 220, 610 224 S 700 205, 760 205 S 900 205, 960 205 S 990 300, 1000 388" fill="none" stroke="#d6336c" stroke-width="4" stroke-dasharray="10 7"/>
+  <text x="150" y="150" font-size="15" font-weight="700" fill="#d6336c">ROTA ALTA — curta, exige precisão</text>
+  <text x="150" y="168" font-size="12" fill="#3b2a4a">toldos com vãos de 3–4 blocos · moedas em arco · pergunta bônus</text>
+
+  <!-- ROTA TÉRREA -->
+  <path d="M40 392 L 690 392 L 940 392" fill="none" stroke="#1c7c54" stroke-width="4" stroke-dasharray="10 7"/>
+  <text x="30" y="545" font-size="15" font-weight="700" fill="#1c7c54">ROTA TÉRREA — longa, acessível, ensina o conteúdo</text>
+  <text x="30" y="563" font-size="12" fill="#3b2a4a">placa com dica · bloco "?" obrigatório · espera o boneco verde e atravessa na faixa</text>
+  <!-- placa, bloco ?, semáforos -->
+  <g><rect x="120" y="356" width="34" height="26" fill="#a87a4a" stroke="#2a1d10" stroke-width="2"/><rect x="134" y="382" width="6" height="18" fill="#5b4630"/></g>
+  <text x="137" y="346" text-anchor="middle" font-size="11" fill="#3b2a4a">placa</text>
+  <rect x="390" y="330" width="32" height="32" fill="#ffb800" stroke="#2a1d10" stroke-width="3"/><text x="406" y="353" text-anchor="middle" font-size="18" font-weight="700">?</text>
+  <g transform="translate(640 300)"><rect x="0" y="0" width="16" height="44" rx="3" fill="#222"/><circle cx="8" cy="9" r="5" fill="#e2463a"/><circle cx="8" cy="22" r="5" fill="#5a4a1a"/><circle cx="8" cy="35" r="5" fill="#1a4a2a"/><rect x="6" y="44" width="4" height="56" fill="#333"/></g>
+  <text x="648" y="290" text-anchor="middle" font-size="11" fill="#3b2a4a">carros: vermelho</text>
+  <g transform="translate(676 344)"><rect width="16" height="22" rx="2" fill="#222"/><rect x="5" y="4" width="6" height="12" fill="#2fd16a"/><rect x="6" y="22" width="4" height="34" fill="#333"/></g>
+  <text x="700" y="336" text-anchor="start" font-size="11" fill="#1c7c54">boneco verde: pode atravessar</text>
+  <rect x="560" y="372" width="120" height="22" fill="#2fd16a" opacity=".25" stroke="#1c7c54" stroke-dasharray="4 3"/>
+  <text x="620" y="388" text-anchor="middle" font-size="11" fill="#1c7c54">zona segura</text>
+
+  <!-- convergência + checkpoint -->
+  <g transform="translate(1100 300)"><rect x="-5" y="0" width="10" height="88" fill="#333"/><circle cx="0" cy="-6" r="12" fill="#ffd23f" stroke="#7a4b00" stroke-width="3"/></g>
+  <text x="1100" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#14001d">checkpoint · convergência</text>
+  <text x="1100" y="288" text-anchor="middle" font-size="12" fill="#3b2a4a">dica que resume a rota térrea</text>
+  <!-- segredo -->
+  <path d="M1250 426 l0 30 l20 0 l0 20 l20 0 l0 20" stroke="#2a1d10" stroke-width="5" fill="none"/>
+  <rect x="1240" y="520" width="140" height="60" fill="#3a2a1a" stroke="#ffd23f" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="1310" y="548" text-anchor="middle" font-size="13" font-weight="700" fill="#ffd23f">galeria secreta</text>
+  <text x="1310" y="566" text-anchor="middle" font-size="12" fill="#ffd23f">cordel da fase</text>
+
+  <!-- personagens -->
+  <g transform="translate(560 362)"><rect width="14" height="30" rx="3" fill="#7a4a2a"/><circle cx="7" cy="-6" r="8" fill="#7a4a2a"/></g>
+  <g transform="translate(586 364)"><rect width="13" height="28" rx="3" fill="#f2d08a"/><circle cx="6" cy="-6" r="8" fill="#f2d08a"/></g>
+  <text x="575" y="350" text-anchor="middle" font-size="11" fill="#3b2a4a">esperaram juntos</text>
+</svg>

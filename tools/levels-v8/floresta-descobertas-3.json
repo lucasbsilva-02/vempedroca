@@ -1,0 +1,214 @@
+{
+ "schema": 1,
+ "id": "floresta-descobertas-3",
+ "worldId": "floresta-descobertas",
+ "title": "O Laboratório da Mata",
+ "order": 3,
+ "discipline": "Ciências",
+ "grade": "6º ano",
+ "difficulty": 2,
+ "competency": "Etapas da investigação científica: observação, hipótese, experimento e conclusão",
+ "objective": "Organizar uma investigação científica: observar, perguntar, levantar uma hipótese, testar com um experimento justo e tirar conclusões.",
+ "narrative": "Os cientistas do laboratório da mata descobriram quem está por trás de tudo: o próprio Rei Ratão, chefe de todos os Rataões, que anda trocando os resultados dos experimentos. Use o método científico para desmascarar as falsas conclusões dele!",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "mata",
+  "biome": "mata",
+  "skyTint": 11591679,
+  "tint": 5085322,
+  "midTint": 6726784
+ },
+ "bncc": {
+  "code": "",
+  "description": "Sugestão: processos de investigação científica (observar, levantar hipóteses, experimentar e concluir), presentes nas competências específicas de Ciências da Natureza. Proposta ainda não validada.",
+  "validated": false
+ },
+ "tiles": [],
+ "objects": [
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 0,
+   "y": 9,
+   "title": "Dica: começa olhando",
+   "text": "Toda investigação começa com uma observação e uma pergunta. Exemplo: 'as plantas perto da janela crescem mais. Será que é por causa da luz?'"
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 0,
+   "y": 9,
+   "title": "Guarda-Pitomba no laboratório",
+   "text": "Hoje tem canoa, tronco e cipó, tudo junto! Um passo de cada vez, como num experimento: observe, planeje e só então pule."
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 0,
+   "y": 9,
+   "title": "Dica: hipótese",
+   "text": "Hipótese é uma resposta provável para a pergunta, que ainda precisa ser testada. Ex.: 'a luz faz a planta crescer mais'."
+  },
+  {
+   "id": "sign3",
+   "type": "sign",
+   "x": 0,
+   "y": 9,
+   "title": "Dica: experimento justo",
+   "text": "Num experimento justo, só uma coisa muda de cada vez. Para testar a luz, as plantas precisam da mesma água, do mesmo solo e da mesma semente; só a luz é diferente. Repetir o teste deixa o resultado mais confiável."
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 0,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "O que é uma hipótese?",
+    "options": [
+     "Uma resposta provável que ainda será testada",
+     "A conclusão final da pesquisa",
+     "Uma opinião que não precisa de teste",
+     "O resultado do experimento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! A hipótese é uma explicação provável que o experimento vai testar.",
+    "hint": "Releia a segunda placa."
+   }
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 0,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "Para testar se a luz ajuda o feijão a crescer, o melhor experimento é:",
+    "options": [
+     "Plantar um feijão no sol e outro no escuro, com a mesma água e o mesmo solo",
+     "Plantar um feijão no sol com água e outro no escuro sem água",
+     "Plantar um feijão só e esperar",
+     "Perguntar a um amigo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Só a luz muda; o resto é igual. Assim dá para saber o efeito da luz.",
+    "hint": "Num experimento justo, só uma coisa muda."
+   }
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Canoa, tronco e cipó, Renata! Um de cada vez.",
+   "renata": "Hoje tem de tudo, Pedroca: canoa, tronco e cipó!"
+  },
+  {
+   "x": 40,
+   "pedroca": "Hipótese é palpite que a gente testa, visse?",
+   "renata": "Hipótese é um palpite que ainda vai ser testado."
+  },
+  {
+   "x": 100,
+   "pedroca": "É o Rei Ratão em pessoa! Bora lembrar de tudo que a gente aprendeu.",
+   "renata": "Olha ele aí! É o Rei Ratão. Pensa em tudo que a gente aprendeu no Recife!"
+  }
+ ],
+ "boss": {
+  "name": "Rei Ratão",
+  "intro": "O Rei Ratão, chefe de todos os Rataões, apareceu! Ele roubou artefatos do Recife inteiro. Para vencer, mostre tudo o que aprendeu: ciências, palavras e números.",
+  "requiredCorrect": 6,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Qual é a ordem mais adequada de uma investigação científica?",
+    "options": [
+     "Conclusão, experimento, hipótese, observação",
+     "Observação e pergunta, hipótese, experimento, conclusão",
+     "Experimento, observação, conclusão, hipótese",
+     "Hipótese, conclusão, observação, experimento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Primeiro se observa e pergunta, depois se levanta a hipótese, testa e conclui.",
+    "hint": "Tudo começa olhando o mundo."
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Num experimento para testar o efeito da luz, o que deve ser IGUAL entre as plantas?",
+    "options": [
+     "Só a luz",
+     "A água, o solo e a semente",
+     "Nada precisa ser igual",
+     "Só o vaso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Tudo é igual menos o que está sendo testado (a luz).",
+    "hint": "Releia a placa do experimento justo."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "O resultado do experimento mostrou o contrário da hipótese. O que o cientista deve fazer?",
+    "options": [
+     "Esconder o resultado",
+     "Rever a hipótese e, se precisar, fazer novos testes",
+     "Mudar os números para combinar",
+     "Desistir da ciência"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Errar a hipótese faz parte: o resultado ensina e a hipótese é revista.",
+    "hint": "Na ciência, o resultado manda."
+   },
+   {
+    "id": "b4",
+    "type": "multiple_choice",
+    "prompt": "Por que os cientistas repetem um experimento várias vezes?",
+    "options": [
+     "Para gastar mais material",
+     "Para ter certeza de que o resultado não foi por acaso",
+     "Porque é proibido fazer uma vez só",
+     "Para mudar a pergunta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Repetir deixa o resultado mais confiável.",
+    "hint": "Pense em 'confiável'."
+   },
+   {
+    "id": "b5",
+    "type": "multiple_choice",
+    "prompt": "Revisão das palavras: num convite de aniversário, qual informação NÃO pode faltar?",
+    "options": [
+     "A receita do bolo",
+     "A data, o horário e o local da festa",
+     "A previsão do tempo",
+     "O nome do Ratão"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Um convite precisa dizer quando e onde a festa vai acontecer.",
+    "hint": "Pense no que o convidado precisa saber para chegar."
+   },
+   {
+    "id": "b6",
+    "type": "multiple_choice",
+    "prompt": "Revisão dos números: o Ratão escondeu 24 moedas e você recuperou a metade. Quantas moedas você recuperou?",
+    "options": [
+     "6",
+     "12",
+     "20",
+     "48"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! A metade de 24 é 12.",
+    "hint": "Metade é dividir por 2."
+   }
+  ],
+  "final": true,
+  "ending": "O Rei Ratão foi derrotado e os artefatos voltam para o museu. Pedroca e Renata mostraram que quem lê, conta e investiga não cai na conversa do Ratão. Próxima parada: o resto de Pernambuco!"
+ }
+}

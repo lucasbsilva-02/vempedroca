@@ -1,0 +1,304 @@
+{
+ "schema": 1,
+ "id": "floresta-descobertas-1",
+ "worldId": "floresta-descobertas",
+ "title": "O Ciclo da Água no Capibaribe",
+ "order": 1,
+ "discipline": "Ciências",
+ "grade": "5º ano",
+ "difficulty": 1,
+ "competency": "Mudanças de estado físico da água e o ciclo hidrológico",
+ "objective": "Explicar o caminho da água na natureza: evaporação, condensação, precipitação e infiltração, e por que a mata da beira do rio protege a água.",
+ "narrative": "O Rataão quer secar o Capibaribe para vender garrafinhas de água! Atravesse o rio de canoa, descubra como a água viaja pela natureza e devolva o que ele roubou.",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "mata",
+  "biome": "mata",
+  "skyTint": 12320767,
+  "tint": 6127498,
+  "midTint": 8364154
+ },
+ "bncc": {
+  "code": "EF05CI02",
+  "description": "Sugestão: aplicar os conhecimentos sobre as mudanças de estado físico da água para explicar o ciclo hidrológico. Proposta ainda não validada.",
+  "validated": false
+ },
+ "tiles": [
+  "..................................................................................................................................................",
+  "..................................................................................................................................................",
+  "..................................................................................................................................................",
+  "..................................................................................................................................................",
+  "..................................................................................................................................................",
+  "..................................................................................................................................................",
+  "..................................................................................................................................................",
+  "............................................--....................................................................................................",
+  "..................................................................................................................................................",
+  "..................................................................................................................................................",
+  "######################~~~~~~##############~~~~~~~########################################~~~~~~~~~################################################",
+  "######################~~~~~~##############~~~~~~~########################################~~~~~~~~~################################################"
+ ],
+ "objects": [
+  {
+   "id": "start134",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 7,
+   "y": 9,
+   "title": "Dica: a água viaja",
+   "text": "A água do rio não fica parada no mesmo lugar para sempre. O calor do sol a transforma em vapor, o vapor vira nuvem, a nuvem vira chuva e a chuva volta para o rio e para o solo. Esse caminho se chama ciclo da água."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 13,
+   "y": 9,
+   "title": "Guarda-Pitomba na beira do rio",
+   "text": "As canoas levam a gente de uma margem à outra: espere ela encostar e pule dentro! E repare: quando o sol esquenta o rio, parte da água sobe como vapor que a gente nem vê."
+  },
+  {
+   "id": "mover135",
+   "type": "mover",
+   "x": 22,
+   "y": 9,
+   "w": 3,
+   "dx": 3,
+   "speed": 0.6,
+   "kind": "tronco"
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 30,
+   "y": 9
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 36,
+   "y": 7,
+   "title": "Bloco obrigatório",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "Quando o sol esquenta o rio e parte da água vira vapor, esse processo se chama:",
+    "options": [
+     "Condensação",
+     "Evaporação",
+     "Precipitação",
+     "Infiltração"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Evaporação é a passagem da água do estado líquido para o vapor.",
+    "hint": "Pense na água 'sumindo' de uma poça num dia de sol."
+   },
+   "required": true
+  },
+  {
+   "id": "mover136",
+   "type": "mover",
+   "x": 42,
+   "y": 9,
+   "w": 3,
+   "dx": 4,
+   "speed": 0.9,
+   "kind": "canoa"
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 52,
+   "y": 9,
+   "title": "Dica: nuvem é água",
+   "text": "Lá no alto, o vapor de água esfria e vira gotinhas, formando as nuvens. Quando as gotinhas ficam pesadas, caem como chuva. Parte da chuva escorre para o rio; parte entra no chão e abastece a água subterrânea."
+  },
+  {
+   "id": "g1",
+   "type": "gate",
+   "kind": "wall",
+   "x": 58,
+   "y": 9,
+   "w": 2,
+   "requires": "q1"
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 79,
+   "y": 9
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 84,
+   "y": 7,
+   "title": "Bloco de pergunta (opcional)",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "As nuvens se formam quando o vapor de água esfria lá no alto. Esse processo é a:",
+    "options": [
+     "Evaporação",
+     "Fusão",
+     "Condensação",
+     "Solidificação"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! Na condensação, o vapor esfria e volta a ser gotinhas de água líquida.",
+    "hint": "É o mesmo que acontece no lado de fora de um copo gelado."
+   }
+  },
+  {
+   "id": "mover137",
+   "type": "mover",
+   "x": 89,
+   "y": 9,
+   "w": 3,
+   "dx": 2,
+   "speed": 0.9,
+   "kind": "canoa"
+  },
+  {
+   "id": "mover138",
+   "type": "mover",
+   "x": 93,
+   "y": 9,
+   "w": 3,
+   "dx": 2,
+   "speed": 0.8,
+   "kind": "tronco"
+  },
+  {
+   "id": "sign3",
+   "type": "sign",
+   "x": 101,
+   "y": 9,
+   "title": "Dica: mata ciliar",
+   "text": "As árvores da beira do rio (mata ciliar) seguram a terra com as raízes. Sem elas, a chuva arrasta terra para dentro do rio, que fica raso e barrento. Isso se chama assoreamento."
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 106,
+   "y": 9
+  },
+  {
+   "id": "boss139",
+   "type": "boss",
+   "x": 140,
+   "y": 9
+  },
+  {
+   "id": "d140",
+   "type": "decor",
+   "x": 10,
+   "y": 9,
+   "asset": "mato1"
+  },
+  {
+   "id": "d141",
+   "type": "decor",
+   "x": 39,
+   "y": 9,
+   "asset": "mato2"
+  },
+  {
+   "id": "d142",
+   "type": "decor",
+   "x": 99,
+   "y": 9,
+   "asset": "mato3"
+  },
+  {
+   "id": "npcg143",
+   "type": "npc",
+   "x": 55,
+   "y": 9,
+   "title": "Guarda-Pitomba no portão",
+   "text": "O portão de pedra do cais só abre para quem responde o bloco laranja que ficou antes do rio: como se chama a água virando vapor?"
+  },
+  {
+   "id": "cordel1",
+   "type": "cordel",
+   "x": 45,
+   "y": 5,
+   "title": "O Caminho da Água",
+   "text": "O sol esquenta o rio,\na água sobe ao céu;\nvira nuvem, vira frio,\nvira chuva feito véu.\nVolta pro chão e pro rio,\ngirando feito carrossel."
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Bora, Renata! A canoa vai e volta: espera ela encostar na margem.",
+   "renata": "Oxe, Pedroca, olha a canoa! Espera ela chegar na margem e pula dentro."
+  },
+  {
+   "x": 32,
+   "pedroca": "O sol esquenta o rio e a água sobe como vapor. Repara!",
+   "renata": "Repara: o sol esquenta o rio e um pouco da água vira vapor."
+  },
+  {
+   "x": 127,
+   "pedroca": "O Rataão tá aí! Lembra do caminho da água.",
+   "renata": "Segura, o Rataão vem aí. Pensa no ciclo da água!"
+  }
+ ],
+ "boss": {
+  "name": "Rataão das Garrafinhas",
+  "intro": "O Rataão das Garrafinhas quer secar o Capibaribe! Mostre que você entende o ciclo da água.",
+  "requiredCorrect": 3,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Chuva, granizo e neve que caem das nuvens são exemplos de:",
+    "options": [
+     "Evaporação",
+     "Precipitação",
+     "Infiltração",
+     "Transpiração"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Precipitação é qualquer água que cai das nuvens.",
+    "hint": "É a etapa em que a água volta das nuvens para o chão."
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Parte da água da chuva entra no solo e abastece a água subterrânea. Isso se chama:",
+    "options": [
+     "Condensação",
+     "Infiltração",
+     "Evaporação",
+     "Fusão"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Na infiltração a água penetra no solo e chega aos lençóis de água subterrânea.",
+    "hint": "A palavra lembra 'entrar devagarinho'."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Por que a mata ciliar (árvores da beira do rio) protege o rio?",
+    "options": [
+     "Porque esquenta a água",
+     "Porque as raízes seguram o solo e evitam o assoreamento",
+     "Porque impede a chuva de cair",
+     "Porque deixa o rio mais salgado"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! As raízes seguram a terra; sem elas, a chuva leva terra para o rio, que fica raso.",
+    "hint": "Releia a última placa antes da arena."
+   }
+  ]
+ },
+ "artifact": {
+  "name": "Mapa das nascentes do Capibaribe",
+  "text": "O Capibaribe nasce no Agreste pernambucano, na região de Poção, e atravessa o estado até chegar ao Recife, onde encontra o Beberibe e o mar."
+ }
+}

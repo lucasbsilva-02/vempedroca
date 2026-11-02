@@ -1,0 +1,464 @@
+{
+ "schema": 1,
+ "id": "reino-numeros-2",
+ "worldId": "reino-numeros",
+ "title": "O Labirinto dos Padrões",
+ "order": 2,
+ "discipline": "Matemática",
+ "grade": "6º ano",
+ "difficulty": 2,
+ "competency": "Sequências, regularidades e raciocínio lógico",
+ "objective": "Descobrir a regra de uma sequência numérica ou de figuras e usá-la para prever termos seguintes.",
+ "narrative": "Os portões do labirinto só abrem para quem descobre o padrão escondido. Observe as placas, ache a regra e siga adiante!",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "recife",
+  "skyTint": 13147391,
+  "tint": 12099808,
+  "midTint": 11046096,
+  "far": [
+   "pred6",
+   "pred7",
+   "pred2",
+   "cinema",
+   "pred5",
+   "pred1",
+   "pred3"
+  ],
+  "mid": [
+   "wazulesc",
+   "wvermelho",
+   "wazul",
+   "wvermelho"
+  ]
+ },
+ "boss": {
+  "name": "Rataão do Labirinto",
+  "intro": "O Rataão do Labirinto embaralhou os padrões! Descubra as regras para atravessar o último portão.",
+  "requiredCorrect": 3,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Qual é o 8º termo da sequência 5, 10, 15, 20, ...?",
+    "options": [
+     "35",
+     "40",
+     "45",
+     "50"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! A regra é 'somar 5', e o termo de posição n vale 5 × n: 5 × 8 = 40.",
+    "hint": "Cada termo é 5 vezes a sua posição."
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Complete a sequência dos quadrados: 1, 4, 9, 16, ?",
+    "options": [
+     "20",
+     "24",
+     "25",
+     "36"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! São 1², 2², 3², 4² e depois 5² = 25. As diferenças (3, 5, 7, 9) também crescem de 2 em 2.",
+    "hint": "Pense em 1×1, 2×2, 3×3, 4×4..."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Uma sequência começa em 100 e diminui 12 a cada passo. Qual é o 4º termo?",
+    "options": [
+     "52",
+     "64",
+     "76",
+     "48"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! 100, 88, 76, 64: o 4º termo é 64.",
+    "hint": "Escreva os termos um a um: 100, 88, ..."
+   }
+  ]
+ },
+ "bncc": {
+  "code": "",
+  "description": "Proposta pedagógica editável — ainda não validada com a BNCC.",
+  "validated": false
+ },
+ "tiles": [
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "..................................................................................................................................................................................",
+  "########################################========######========###################..................................................###############################################",
+  "#################################################################################GG..............................................GG###############################################",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG..........................................GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG..................--..................GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG.......G.....G.....G.--..G........GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG.....G.....G.....G.....G......GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+ ],
+ "objects": [
+  {
+   "id": "start86",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 7,
+   "y": 9,
+   "title": "Dica: procure a regra",
+   "text": "Compare cada número com o seguinte: a diferença é sempre a mesma? Ou cada termo é o anterior multiplicado por algo? Descubra a regra antes de continuar a sequência."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 12,
+   "y": 9,
+   "title": "Guarda-Pitomba mostra as placas dos portões",
+   "text": "Portão 1: 3, 7, 11, 15, ... Portão 2: 2, 4, 8, 16, ... Portão 3: ▲ ● ■ ▲ ● ■ ▲ ● ..."
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 17,
+   "y": 7,
+   "title": "Bloco obrigatório",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "Qual é o próximo número do Portão 1 (3, 7, 11, 15, ...)?",
+    "options": [
+     "18",
+     "19",
+     "20",
+     "23"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! A cada passo soma-se 4: 15 + 4 = 19.",
+    "hint": "Calcule a diferença entre dois números vizinhos."
+   },
+   "required": true
+  },
+  {
+   "id": "g1",
+   "type": "gate",
+   "kind": "wall",
+   "x": 22,
+   "y": 9,
+   "w": 2,
+   "requires": "q1"
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 29,
+   "y": 9
+  },
+  {
+   "id": "tr1",
+   "type": "traffic",
+   "x": 40,
+   "y": 9,
+   "w": 8,
+   "cycle": {
+    "green": 4,
+    "yellow": 1.2,
+    "red": 4.5
+   },
+   "lanes": [
+    {
+     "dir": 1,
+     "every": 2.6
+    }
+   ]
+  },
+  {
+   "id": "tr2",
+   "type": "traffic",
+   "x": 54,
+   "y": 9,
+   "w": 8,
+   "cycle": {
+    "green": 4,
+    "yellow": 1.2,
+    "red": 4.5,
+    "offset": 2.5
+   },
+   "lanes": [
+    {
+     "dir": 1,
+     "every": 2.6
+    }
+   ]
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 71,
+   "y": 9,
+   "title": "Dica: padrões que se repetem",
+   "text": "Em sequências de figuras, descubra qual grupo se repete e conte as posições. Se o grupo tem 3 figuras, a 3ª, a 6ª e a 9ª são iguais."
+  },
+  {
+   "id": "desce1",
+   "type": "sign",
+   "x": 76,
+   "y": 9,
+   "asset": "placa_descida",
+   "title": "Acesso subterrâneo",
+   "text": "O caminho do labirinto continua por baixo da rua. Desça a escada, pule as colunas de pedra e procure a saída do outro lado."
+  },
+  {
+   "id": "decor87",
+   "type": "decor",
+   "x": 82,
+   "y": 9,
+   "asset": "seta",
+   "scale": 1
+  },
+  {
+   "id": "obras93",
+   "type": "sign",
+   "x": 94,
+   "y": 15,
+   "asset": "placa_obras",
+   "quiet": true,
+   "title": "Em construção",
+   "text": "Opa! Desculpa pela bagunça! Essa parte ainda está em construção. Estamos trabalhando para deixar esse caminho bem melhor. Obrigado pela paciência!"
+  },
+  {
+   "id": "decor88",
+   "type": "decor",
+   "x": 97,
+   "y": 15,
+   "asset": "poste",
+   "lit": true
+  },
+  {
+   "id": "decor89",
+   "type": "decor",
+   "x": 105,
+   "y": 15,
+   "asset": "poste",
+   "lit": true
+  },
+  {
+   "id": "decor90",
+   "type": "decor",
+   "x": 113,
+   "y": 15,
+   "asset": "poste",
+   "lit": true
+  },
+  {
+   "id": "decor91",
+   "type": "decor",
+   "x": 98.5,
+   "y": 15,
+   "asset": "banco"
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 111,
+   "y": 12,
+   "title": "Bloco de pergunta (opcional)",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "Qual é a regra do Portão 2 (2, 4, 8, 16, ...)?",
+    "options": [
+     "Somar 2",
+     "Multiplicar por 2",
+     "Somar 4",
+     "Multiplicar por 4"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! 2 → 4 → 8 → 16: cada termo é o dobro do anterior.",
+    "hint": "A diferença muda a cada passo (2, 4, 8). Pense em multiplicação."
+   }
+  },
+  {
+   "id": "collectible92",
+   "type": "collectible",
+   "x": 94,
+   "y": 15
+  },
+  {
+   "id": "collectible93",
+   "type": "collectible",
+   "x": 99,
+   "y": 15
+  },
+  {
+   "id": "collectible94",
+   "type": "collectible",
+   "x": 102,
+   "y": 13
+  },
+  {
+   "id": "collectible95",
+   "type": "collectible",
+   "x": 105,
+   "y": 12
+  },
+  {
+   "id": "collectible96",
+   "type": "collectible",
+   "x": 106,
+   "y": 12
+  },
+  {
+   "id": "collectible97",
+   "type": "collectible",
+   "x": 108,
+   "y": 12
+  },
+  {
+   "id": "collectible98",
+   "type": "collectible",
+   "x": 116,
+   "y": 15
+  },
+  {
+   "id": "collectible99",
+   "type": "collectible",
+   "x": 118,
+   "y": 15
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 132,
+   "y": 9
+  },
+  {
+   "id": "q3",
+   "type": "question",
+   "x": 137,
+   "y": 7,
+   "title": "Bloco obrigatório",
+   "question": {
+    "id": "q3",
+    "type": "multiple_choice",
+    "prompt": "No Portão 3, qual figura vem depois de ▲ ● ■ ▲ ● ■ ▲ ● ?",
+    "options": [
+     "▲",
+     "●",
+     "■",
+     "◆"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! O grupo ▲ ● ■ se repete; depois de ▲ ● vem ■.",
+    "hint": "Qual grupo de figuras se repete?"
+   },
+   "required": true
+  },
+  {
+   "id": "g2",
+   "type": "gate",
+   "kind": "wall",
+   "x": 145,
+   "y": 9,
+   "w": 2,
+   "requires": "q3"
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 153,
+   "y": 9
+  },
+  {
+   "id": "boss100",
+   "type": "boss",
+   "x": 172,
+   "y": 9
+  },
+  {
+   "id": "d101",
+   "type": "decor",
+   "x": 9,
+   "y": 9,
+   "asset": "mato1"
+  },
+  {
+   "id": "d102",
+   "type": "decor",
+   "x": 27.5,
+   "y": 9,
+   "asset": "banco"
+  },
+  {
+   "id": "d103",
+   "type": "decor",
+   "x": 78,
+   "y": 9,
+   "asset": "mato3"
+  },
+  {
+   "id": "d104",
+   "type": "decor",
+   "x": 139,
+   "y": 9,
+   "asset": "lixeira"
+  },
+  {
+   "id": "d105",
+   "type": "decor",
+   "x": 150,
+   "y": 9,
+   "asset": "mato1"
+  },
+  {
+   "id": "npcg106",
+   "type": "npc",
+   "x": 141,
+   "y": 9,
+   "title": "Guarda-Pitomba no Portão 3",
+   "text": "O Portão 3 segue a regra das figuras (triângulo, círculo, quadrado...). Ele só abre quando o bloco laranja aqui antes for respondido: qual figura vem depois?"
+  },
+  {
+   "id": "cordel1",
+   "type": "cordel",
+   "x": 114,
+   "y": 12,
+   "title": "O Padrão do Maracatu",
+   "text": "A alfaia do maracatu\nrepete batida e compasso:\ntum-tum-pá, tum-tum-pá,\nacompanhando o passo.\nAchar a regra que se repete\né desatar qualquer laço."
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Ache a regra do padrão antes de tudo.",
+   "renata": "Primeiro descubra a regra, depois prevê o próximo."
+  },
+  {
+   "x": 14,
+   "pedroca": "Soma? Multiplica? Repete? Qual é a regra?",
+   "renata": "Olha a diferença entre um número e o seguinte."
+  },
+  {
+   "x": 159,
+   "pedroca": "Travou? Escreve os termos um a um.",
+   "renata": "Se travar, anota os termos na ordem, visse?"
+  }
+ ],
+ "artifact": {
+  "name": "Alfaia de maracatu",
+  "text": "A alfaia é o grande tambor do maracatu de baque virado, tradição afro-pernambucana que marca o ritmo com padrões que se repetem."
+ }
+}

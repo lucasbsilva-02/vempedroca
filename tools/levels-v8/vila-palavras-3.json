@@ -1,0 +1,483 @@
+{
+ "schema": 1,
+ "id": "vila-palavras-3",
+ "worldId": "vila-palavras",
+ "title": "O Desafio das Palavras",
+ "order": 3,
+ "discipline": "Língua Portuguesa",
+ "grade": "6º ano",
+ "difficulty": 2,
+ "competency": "Vocabulário em contexto, organização textual e reconhecimento de gêneros textuais",
+ "objective": "Reconhecer a finalidade de diferentes gêneros, organizar ideias em sequência e descobrir o sentido de palavras pelo contexto.",
+ "narrative": "Na praça da vila, o Rataão espalhou papéis de todo tipo pelo chão. Descubra que texto é cada um, coloque as ideias na ordem certa e enfrente o desafio final do mundo!",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "recife",
+  "skyTint": 7469256,
+  "tint": 8423624,
+  "midTint": 7368888,
+  "far": [
+   "pred3",
+   "pred5",
+   "cinema",
+   "pred8",
+   "pred1",
+   "pred7",
+   "pred6"
+  ],
+  "mid": [
+   "wazulesc",
+   "wazul",
+   "wverde",
+   "wazulesc",
+   "wverdeclaro"
+  ]
+ },
+ "boss": {
+  "name": "Rataão, Rei das Palavras",
+  "intro": "O Rei das Palavras reuniu tudo o que você aprendeu! Acerte as quatro perguntas para encerrar o mundo da Vila.",
+  "requiredCorrect": 4,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Qual sequência organiza corretamente a receita? (A) Sirva. (B) Bata os ovos. (C) Asse no forno. (D) Junte o açúcar.",
+    "options": [
+     "A – B – C – D",
+     "B – D – C – A",
+     "C – B – D – A",
+     "D – A – B – C"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Primeiro bate os ovos, depois junta o açúcar, assa e só então serve.",
+    "hint": "O que precisa acontecer antes de levar ao forno?"
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Um texto que informa um fato recente, com data e local, é:",
+    "options": [
+     "Uma receita",
+     "Um convite",
+     "Uma notícia",
+     "Um poema"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! A notícia informa fatos recentes, respondendo a perguntas como o quê, quando e onde.",
+    "hint": "Pense no texto que você leria para saber o que aconteceu ontem."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Na biblioteca, a janela estava 'entreaberta'. Isso quer dizer que ela estava:",
+    "options": [
+     "Totalmente fechada",
+     "Um pouco aberta",
+     "Quebrada",
+     "Muito grande"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! O prefixo 'entre' indica algo no meio do caminho: nem aberta, nem fechada.",
+    "hint": "'Entre' lembra algo no meio de dois extremos."
+   },
+   {
+    "id": "b4",
+    "type": "multiple_choice",
+    "prompt": "Na feira, dona Marta espera os 'fregueses' voltarem. Fregueses são:",
+    "options": [
+     "Clientes",
+     "Vizinhos",
+     "Policiais",
+     "Cobradores"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Freguês é quem costuma comprar numa barraca; o contexto da feira ajuda a descobrir.",
+    "hint": "Quem volta à barraca para comprar?"
+   }
+  ]
+ },
+ "bncc": {
+  "code": "",
+  "description": "Proposta pedagógica editável — ainda não validada com a BNCC.",
+  "validated": false
+ },
+ "tiles": [
+  "......................................................................................................................",
+  "......................................................................................................................",
+  "......................................................................................................................",
+  "......................................................................................................................",
+  "......................................................................................................................",
+  "......................................................................................................................",
+  "......................................................................................................................",
+  ".....................--.......................................--...........................--.........................",
+  ".................--....................--..--.....................--...................--.............................",
+  "......................................................................................................................",
+  "##################...###################...####################...######################...###########################",
+  "##################...###################...####################...######################...###########################"
+ ],
+ "objects": [
+  {
+   "id": "start",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 8,
+   "y": 9,
+   "title": "Dica: o que o texto quer?",
+   "text": "Cada gênero tem uma finalidade: convidar, ensinar, informar ou divertir. Observe para que o texto foi escrito e como ele está organizado."
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 46,
+   "y": 9,
+   "title": "Dica: ordem das ideias",
+   "text": "Um texto bem organizado tem começo, meio e fim. Palavras como 'primeiro', 'depois' e 'por fim' mostram a ordem. Numa receita, trocar a ordem dos passos muda o resultado."
+  },
+  {
+   "id": "sign3",
+   "type": "sign",
+   "x": 104,
+   "y": 9,
+   "title": "Dica final",
+   "text": "No desafio final, o Rataão vai misturar tudo o que você viu: gêneros, ordem das ideias e palavras novas. Use o contexto e releia os papéis quando precisar."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 14,
+   "y": 9,
+   "title": "Guarda-Pitomba lê os papéis",
+   "text": "Papel 1: 'Venha à festa de São João da escola! Sábado, às 16h, no pátio. Traga um prato de milho.' Papel 2: 'Ingredientes: 2 ovos e 1 xícara de açúcar. Modo de preparo: bata os ovos, junte o açúcar e leve ao forno.' Papel 3: 'A Prefeitura inaugurou ontem a nova biblioteca do bairro, que terá mais de mil livros.'"
+  },
+  {
+   "id": "npc2",
+   "type": "npc",
+   "x": 70,
+   "y": 9,
+   "title": "Guarda-Pitomba relembra",
+   "text": "Na feira, dona Marta espera os fregueses voltarem depois da chuva. Na biblioteca, a janela dos fundos estava entreaberta, e o autor da carta jurou devolver o livro ao amanhecer. Cada palavra ganha sentido pelo contexto."
+  },
+  {
+   "id": "c1",
+   "type": "collectible",
+   "x": 17,
+   "y": 6
+  },
+  {
+   "id": "c2",
+   "type": "collectible",
+   "x": 23,
+   "y": 6
+  },
+  {
+   "id": "c3",
+   "type": "collectible",
+   "x": 31,
+   "y": 9
+  },
+  {
+   "id": "c4",
+   "type": "collectible",
+   "x": 44,
+   "y": 7
+  },
+  {
+   "id": "c5",
+   "type": "collectible",
+   "x": 50,
+   "y": 9
+  },
+  {
+   "id": "c6",
+   "type": "collectible",
+   "x": 64,
+   "y": 5
+  },
+  {
+   "id": "c7",
+   "type": "collectible",
+   "x": 68,
+   "y": 7
+  },
+  {
+   "id": "c8",
+   "type": "collectible",
+   "x": 79,
+   "y": 9
+  },
+  {
+   "id": "c9",
+   "type": "collectible",
+   "x": 89,
+   "y": 6
+  },
+  {
+   "id": "c10",
+   "type": "collectible",
+   "x": 93,
+   "y": 6
+  },
+  {
+   "id": "c11",
+   "type": "collectible",
+   "x": 106,
+   "y": 9
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 36,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "O Papel 1 é um convite. Qual pista mostra isso?",
+    "options": [
+     "Ensina o que fazer passo a passo",
+     "Chama o leitor para um evento, com dia, hora e local",
+     "Conta um fato que aconteceu ontem",
+     "Explica o que é o milho"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correto! Convites chamam alguém para um evento e informam quando e onde ele será.",
+    "hint": "Que informações aparecem no Papel 1: data, horário, local?"
+   }
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 60,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "No Papel 3, a palavra 'inaugurou' significa:",
+    "options": [
+     "Fechou para sempre",
+     "Abriu oficialmente, pela primeira vez",
+     "Vendeu",
+     "Reformou"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Inaugurar é abrir algo novo ao público. A ideia de 'nova biblioteca' ajuda a perceber o sentido.",
+    "hint": "Que palavra no texto combina com algo que acabou de ser criado?"
+   }
+  },
+  {
+   "id": "q3",
+   "type": "question",
+   "x": 101,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q3",
+    "type": "multiple_choice",
+    "prompt": "O Papel 2 é uma receita. Como você percebe isso?",
+    "options": [
+     "Tem lista de ingredientes e modo de preparo",
+     "Dá uma notícia",
+     "Convida para uma festa",
+     "Conta uma história com personagens"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Ingredientes e modo de preparo são marcas típicas do gênero receita.",
+    "hint": "Que partes do Papel 2 têm título próprio?"
+   }
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 34,
+   "y": 9
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 58,
+   "y": 9
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 82,
+   "y": 9
+  },
+  {
+   "id": "cp4",
+   "type": "checkpoint",
+   "x": 100,
+   "y": 9
+  },
+  {
+   "id": "ob1",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 27,
+   "y": 9
+  },
+  {
+   "id": "ob2",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 31,
+   "y": 9
+  },
+  {
+   "id": "ob3",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 52,
+   "y": 9
+  },
+  {
+   "id": "ob4",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 72,
+   "y": 9
+  },
+  {
+   "id": "ob5",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 76,
+   "y": 9
+  },
+  {
+   "id": "ob6",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 96,
+   "y": 9
+  },
+  {
+   "id": "d1",
+   "type": "decor",
+   "asset": "fusca",
+   "x": 5,
+   "y": 9
+  },
+  {
+   "id": "d2",
+   "type": "decor",
+   "asset": "semaforo_am",
+   "x": 12,
+   "y": 9
+  },
+  {
+   "id": "d3",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 24,
+   "y": 9
+  },
+  {
+   "id": "d4",
+   "type": "decor",
+   "asset": "parada",
+   "x": 31,
+   "y": 9
+  },
+  {
+   "id": "d5",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 38,
+   "y": 9
+  },
+  {
+   "id": "d6",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 49,
+   "y": 9
+  },
+  {
+   "id": "d7",
+   "type": "decor",
+   "asset": "banco",
+   "x": 56,
+   "y": 9
+  },
+  {
+   "id": "d8",
+   "type": "decor",
+   "asset": "semaforo_am",
+   "x": 68,
+   "y": 9
+  },
+  {
+   "id": "d9",
+   "type": "decor",
+   "asset": "mato4",
+   "x": 74,
+   "y": 9
+  },
+  {
+   "id": "d10",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 80,
+   "y": 9
+  },
+  {
+   "id": "d11",
+   "type": "decor",
+   "asset": "fusca",
+   "x": 85,
+   "y": 9
+  },
+  {
+   "id": "d12",
+   "type": "decor",
+   "asset": "banco",
+   "x": 98,
+   "y": 9
+  },
+  {
+   "id": "d13",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 102,
+   "y": 9
+  },
+  {
+   "id": "d14",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 107,
+   "y": 9
+  },
+  {
+   "id": "boss",
+   "type": "boss",
+   "x": 110,
+   "y": 9
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Cada papel tem uma função: convidar, ensinar, informar.",
+   "renata": "Convite, receita, notícia... cada texto faz uma coisa."
+  },
+  {
+   "x": 50,
+   "pedroca": "Ordem importa: primeiro, depois, por fim.",
+   "renata": "Receita fora de ordem desanda, visse? Atenção aos passos."
+  },
+  {
+   "x": 100,
+   "pedroca": "Última da Vila! Use tudo que você aprendeu.",
+   "renata": "Desafio final da Vila! Capricha nas respostas."
+  }
+ ]
+}

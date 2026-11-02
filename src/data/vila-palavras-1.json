@@ -1,0 +1,388 @@
+{
+ "schema": 1,
+ "id": "vila-palavras-1",
+ "worldId": "vila-palavras",
+ "title": "A Feira de Dona Marta",
+ "order": 1,
+ "discipline": "Língua Portuguesa",
+ "grade": "6º ano",
+ "difficulty": 1,
+ "competency": "Interpretação de textos: informações explícitas, vocabulário e inferência simples",
+ "objective": "Localizar informações no texto, descobrir o sentido de palavras pelo contexto e inferir ideias simples.",
+ "bncc": {
+  "code": "",
+  "description": "Proposta pedagógica editável — ainda não validada com a BNCC.",
+  "validated": false
+ },
+ "narrative": "Pedroca chega à feira do bairro e precisa ajudar dona Marta a organizar a barraca antes do Rataão bagunçar tudo. Leia as placas com atenção!",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "recife"
+ },
+ "tiles": [
+  "................................................................................................................................................................",
+  "................................................................................................................................................................",
+  "................................................................................................................................................................",
+  "................................................................................................................................................................",
+  "................................................................................................................................................................",
+  "..............................................................................................--.--.............................................................",
+  "................................................................................................................................................................",
+  ".........................................................--........--......................--.......--..........................................................",
+  "................................................................................................................................................................",
+  "................................................................................................................................................................",
+  "######################...###############========########################......################========##########################...#############################",
+  "######################...###############################################......##################################################...#############################"
+ ],
+ "objects": [
+  {
+   "id": "start1",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 8,
+   "y": 9,
+   "title": "Dica: leia com calma",
+   "text": "Textos guardam informações escritas de forma direta. Quando a pergunta começar com 'o que', 'quem' ou 'quando', volte ao texto e procure a palavra-chave."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 15,
+   "y": 9,
+   "title": "Guarda-Pitomba lê um texto",
+   "text": "Na feira de São José, dona Marta vende bolo de rolo, tapioca e caldo de cana. Sempre que chove, ela cobre a barraca com uma lona azul e espera os fregueses voltarem. Ela diz que a feira é o lugar onde todo mundo se encontra."
+  },
+  {
+   "id": "collectible2",
+   "type": "collectible",
+   "x": 22,
+   "y": 7
+  },
+  {
+   "id": "collectible3",
+   "type": "collectible",
+   "x": 23,
+   "y": 6
+  },
+  {
+   "id": "collectible4",
+   "type": "collectible",
+   "x": 24,
+   "y": 7
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 30,
+   "y": 9
+  },
+  {
+   "id": "tr1",
+   "type": "traffic",
+   "x": 40,
+   "y": 9,
+   "w": 8,
+   "tutorial": true,
+   "cycle": {
+    "green": 6,
+    "yellow": 1.5,
+    "red": 6.5
+   },
+   "lanes": [
+    {
+     "dir": 1,
+     "every": 3.4,
+     "speed": 2.4
+    }
+   ]
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 62,
+   "y": 7,
+   "title": "Bloco obrigatório",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "Segundo o texto, o que dona Marta faz quando chove?",
+    "options": [
+     "Fecha a feira",
+     "Cobre a barraca com uma lona azul",
+     "Vai embora para casa",
+     "Vende guarda-chuvas"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correto! A informação está escrita de forma direta: ela cobre a barraca com uma lona azul.",
+    "hint": "Releia o trecho que começa com 'Sempre que chove'."
+   },
+   "required": true
+  },
+  {
+   "id": "collectible5",
+   "type": "collectible",
+   "x": 57,
+   "y": 6
+  },
+  {
+   "id": "collectible6",
+   "type": "collectible",
+   "x": 58,
+   "y": 6
+  },
+  {
+   "id": "collectible7",
+   "type": "collectible",
+   "x": 67,
+   "y": 6
+  },
+  {
+   "id": "collectible8",
+   "type": "collectible",
+   "x": 68,
+   "y": 6
+  },
+  {
+   "id": "g1",
+   "type": "gate",
+   "kind": "bridge",
+   "x": 72,
+   "y": 9,
+   "w": 6,
+   "requires": "q1"
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 81,
+   "y": 9
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 86,
+   "y": 9,
+   "title": "Dica: palavras novas",
+   "text": "Quando uma palavra for desconhecida, olhe para as palavras ao redor. O contexto costuma mostrar quem está falando ou fazendo a ação."
+  },
+  {
+   "id": "tr2",
+   "type": "traffic",
+   "x": 94,
+   "y": 9,
+   "w": 8,
+   "cycle": {
+    "green": 5,
+    "yellow": 1.5,
+    "red": 5
+   },
+   "lanes": [
+    {
+     "dir": 1,
+     "every": 2.8
+    }
+   ]
+  },
+  {
+   "id": "collectible9",
+   "type": "collectible",
+   "x": 94,
+   "y": 4
+  },
+  {
+   "id": "collectible10",
+   "type": "collectible",
+   "x": 95,
+   "y": 4
+  },
+  {
+   "id": "collectible11",
+   "type": "collectible",
+   "x": 97,
+   "y": 4
+  },
+  {
+   "id": "collectible12",
+   "type": "collectible",
+   "x": 98,
+   "y": 4
+  },
+  {
+   "id": "collectible13",
+   "type": "collectible",
+   "x": 128,
+   "y": 7
+  },
+  {
+   "id": "collectible14",
+   "type": "collectible",
+   "x": 129,
+   "y": 6
+  },
+  {
+   "id": "collectible15",
+   "type": "collectible",
+   "x": 130,
+   "y": 7
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 135,
+   "y": 9
+  },
+  {
+   "id": "boss16",
+   "type": "boss",
+   "x": 154,
+   "y": 9
+  },
+  {
+   "id": "d17",
+   "type": "decor",
+   "x": 11.5,
+   "y": 9,
+   "asset": "banco"
+  },
+  {
+   "id": "d18",
+   "type": "decor",
+   "x": 19,
+   "y": 9,
+   "asset": "mato1"
+  },
+  {
+   "id": "d19",
+   "type": "decor",
+   "x": 27.5,
+   "y": 9,
+   "asset": "canteiro"
+  },
+  {
+   "id": "d20",
+   "type": "decor",
+   "x": 87,
+   "y": 9,
+   "asset": "mato3"
+  },
+  {
+   "id": "d21",
+   "type": "decor",
+   "x": 110.5,
+   "y": 9,
+   "asset": "lixeira"
+  },
+  {
+   "id": "d22",
+   "type": "decor",
+   "x": 114,
+   "y": 9,
+   "asset": "mato1"
+  },
+  {
+   "id": "d23",
+   "type": "decor",
+   "x": 120,
+   "y": 9,
+   "asset": "mato3"
+  },
+  {
+   "id": "d24",
+   "type": "decor",
+   "x": 136.5,
+   "y": 9,
+   "asset": "banco"
+  },
+  {
+   "id": "npcg25",
+   "type": "npc",
+   "x": 69,
+   "y": 9,
+   "title": "Guarda-Pitomba na ponte",
+   "text": "Esta ponte levadiça só baixa quando alguém responde o bloco laranja que ficou lá atrás, depois do semáforo. Lembra do texto da feira? Volte lá, pule embaixo do bloco e responda!"
+  },
+  {
+   "id": "cordel1",
+   "type": "cordel",
+   "x": 96,
+   "y": 3,
+   "title": "A Feira de São José",
+   "text": "Na feira de São José\no povo chega cedinho,\ntem bolo de rolo e café,\ntapioca e queijo fresquinho.\nQuem lê o texto com calma\nnão se perde no caminho."
+  }
+ ],
+ "boss": {
+  "name": "Rataão",
+  "intro": "O Rataão embaralhou as palavras da feira! Responda certo para desfazer a bagunça.",
+  "requiredCorrect": 3,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Quais produtos dona Marta vende na feira?",
+    "options": [
+     "Bolo de rolo, tapioca e caldo de cana",
+     "Pastel, suco e sorvete",
+     "Frutas, verduras e peixe",
+     "Roupas, bolsas e sapatos"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Os produtos aparecem citados na primeira frase do texto.",
+    "hint": "Procure a lista logo no início do texto."
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Em 'espera os fregueses voltarem', a palavra 'fregueses' quer dizer:",
+    "options": [
+     "Vizinhos",
+     "Feirantes",
+     "Clientes",
+     "Músicos"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! Freguês é quem costuma comprar numa barraca; o contexto (esperar voltar) ajuda a perceber.",
+    "hint": "Pense em quem volta à barraca depois da chuva."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Quando dona Marta diz que a feira é o lugar onde todo mundo se encontra, ela quer dizer que a feira é:",
+    "options": [
+     "Um lugar só para comprar",
+     "Um espaço de convivência",
+     "Um lugar proibido",
+     "Um lugar vazio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! É uma inferência: além de vender, a feira reúne pessoas.",
+    "hint": "Esta resposta não está escrita no texto; pense no que a frase sugere."
+   }
+  ]
+ },
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Bora, Renata! As placas ajudam nas perguntas. Leia com calma.",
+   "renata": "Oxe, Pedroca, olha aquela placa! Dica boa pras perguntas."
+  },
+  {
+   "x": 57,
+   "pedroca": "Dá um pulo embaixo do bloco ? pra abrir a pergunta.",
+   "renata": "Pula embaixo do bloco ?, visse? Ele guarda uma pergunta."
+  },
+  {
+   "x": 141,
+   "pedroca": "O Rataão tá aí! Lembra do texto da feira.",
+   "renata": "Segura a onda, o Rataão vem aí. Pensa no texto da feira!"
+  }
+ ],
+ "artifact": {
+  "name": "Sombrinha de frevo",
+  "text": "O frevo nasceu no Recife e é Patrimônio Cultural Imaterial da Humanidade (UNESCO, 2012). A sombrinha colorida é o símbolo do passista."
+ }
+}

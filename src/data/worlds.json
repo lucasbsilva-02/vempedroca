@@ -1,0 +1,6 @@
+[
+ {"id":"vila-palavras","order":1,"name":"Vila das Palavras","discipline":"Língua Portuguesa","blurb":"Leitura, vocabulário e gêneros textuais.","color":"#ffb800"},
+ {"id":"reino-numeros","order":2,"name":"Reino dos Números","discipline":"Matemática","blurb":"Operações, padrões e frações.","color":"#6fe0a3"},
+ {"id":"floresta-descobertas","order":3,"name":"Floresta das Descobertas","discipline":"Ciências","blurb":"Ciclo da água, ecossistemas e método científico.","color":"#7dd3fc"},
+ {"id":"expedicao-tempo-espaco","order":4,"name":"Expedição do Tempo e do Espaço","discipline":"História e Geografia","blurb":"Mapas, cronologia e paisagens.","color":"#ff9a8f"}
+]

@@ -1,0 +1,105 @@
+{
+ "state": {
+  "id": "pernambuco",
+  "name": "Pernambuco"
+ },
+ "cities": [
+  {
+   "id": "recife",
+   "name": "Recife",
+   "available": true,
+   "lon": -34.88,
+   "lat": -8.05,
+   "blurb": "A capital: pontes, rios e ruas históricas. Primeira região da aventura.",
+   "areas": [
+    {
+     "id": "rua-bom-jesus",
+     "name": "Rua do Bom Jesus",
+     "worldId": "vila-palavras",
+     "asset": "cenario/Sinagoga_RDBJ_blur.png",
+     "blurb": "Casarões, placas e histórias. Leitura e interpretação.",
+     "map": [
+      560,
+      1040
+     ]
+    },
+    {
+     "id": "cinema-sao-luiz",
+     "name": "Cinema São Luiz",
+     "worldId": "reino-numeros",
+     "asset": "cenario/Cinema_SAO_LUIZ.png",
+     "blurb": "O reino das contas, dos padrões e das frações.",
+     "map": [
+      950,
+      700
+     ]
+    },
+    {
+     "id": "capibaribe",
+     "name": "Rio Capibaribe",
+     "worldId": "floresta-descobertas",
+     "asset": "cenario/Predio_3_RDBJ_blur.png",
+     "blurb": "Ciclo da água e ecossistemas.",
+     "map": [
+      1350,
+      1040
+     ]
+    },
+    {
+     "id": "marco-zero",
+     "name": "Marco Zero",
+     "worldId": "expedicao-tempo-espaco",
+     "asset": "cenario/Predio_6_RDBJ_blur.png",
+     "blurb": "Mapas, tempo e paisagens.",
+     "map": [
+      1700,
+      690
+     ]
+    }
+   ]
+  },
+  {
+   "id": "olinda",
+   "name": "Olinda",
+   "available": false,
+   "lon": -34.85,
+   "lat": -8.01,
+   "dy": -16
+  },
+  {
+   "id": "porto-de-galinhas",
+   "name": "Porto de Galinhas",
+   "available": false,
+   "lon": -35.0,
+   "lat": -8.5
+  },
+  {
+   "id": "caruaru",
+   "name": "Caruaru",
+   "available": false,
+   "lon": -35.97,
+   "lat": -8.28
+  },
+  {
+   "id": "garanhuns",
+   "name": "Garanhuns",
+   "available": false,
+   "lon": -36.49,
+   "lat": -8.89
+  },
+  {
+   "id": "serra-talhada",
+   "name": "Serra Talhada",
+   "available": false,
+   "lon": -38.3,
+   "lat": -7.99
+  },
+  {
+   "id": "petrolina",
+   "name": "Petrolina",
+   "available": false,
+   "lon": -40.5,
+   "lat": -9.39
+  }
+ ]
+}

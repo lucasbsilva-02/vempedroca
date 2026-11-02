@@ -1,0 +1,104 @@
+{
+ "vila-palavras-2": [
+  {
+   "x": 4,
+   "pedroca": "Mistério na biblioteca! Bora atrás das pistas.",
+   "renata": "Um livro sumiu, Pedroca! Vamos procurar as pistas."
+  },
+  {
+   "x": 40,
+   "pedroca": "Pegada pequena, migalha... quem será? Junte as pistas.",
+   "renata": "Pistas juntas viram inferência. Pensa comigo!"
+  },
+  {
+   "x": 95,
+   "pedroca": "A carta explica tudo. Leia antes de encarar o Rataão.",
+   "renata": "Lê a carta ali antes do chefão, viu?"
+  }
+ ],
+ "reino-numeros-1": [
+  {
+   "x": 4,
+   "pedroca": "A ponte caiu! Separe os dados antes de calcular.",
+   "renata": "Antes de fazer a conta, entende o problema, Pedroca."
+  },
+  {
+   "x": 45,
+   "pedroca": "Multiplicar é somar parcelas iguais. Lembra?",
+   "renata": "Quantidade igual repetida? Pensa em multiplicação."
+  },
+  {
+   "x": 90,
+   "pedroca": "Confere a conta antes de responder, parceiro.",
+   "renata": "Faz a prova real: a resposta faz sentido?"
+  }
+ ],
+ "vila-palavras-1": [
+  {
+   "x": 4,
+   "pedroca": "Bora, Renata! As placas ajudam nas perguntas. Leia com calma.",
+   "renata": "Oxe, Pedroca, olha aquela placa! Dica boa pras perguntas."
+  },
+  {
+   "x": 34,
+   "pedroca": "Dá um pulo embaixo do bloco ? pra abrir a pergunta.",
+   "renata": "Pula embaixo do bloco ?, visse? Ele guarda uma pergunta."
+  },
+  {
+   "x": 100,
+   "pedroca": "O Rataão tá aí! Lembra do texto da feira.",
+   "renata": "Segura a onda, o Rataão vem aí. Pensa no texto da feira!"
+  }
+ ],
+ "vila-palavras-3": [
+  {
+   "x": 4,
+   "pedroca": "Cada papel tem uma função: convidar, ensinar, informar.",
+   "renata": "Convite, receita, notícia... cada texto faz uma coisa."
+  },
+  {
+   "x": 50,
+   "pedroca": "Ordem importa: primeiro, depois, por fim.",
+   "renata": "Receita fora de ordem desanda, visse? Atenção aos passos."
+  },
+  {
+   "x": 100,
+   "pedroca": "Última da Vila! Use tudo que você aprendeu.",
+   "renata": "Desafio final da Vila! Capricha nas respostas."
+  }
+ ],
+ "reino-numeros-3": [
+  {
+   "x": 4,
+   "pedroca": "Fração é parte de um todo dividido igual.",
+   "renata": "Em cima, as partes tomadas; embaixo, o total de partes."
+  },
+  {
+   "x": 55,
+   "pedroca": "Dobrou a receita? Dobra tudo: é proporção!",
+   "renata": "Proporção: se dobra um, dobra o outro."
+  },
+  {
+   "x": 105,
+   "pedroca": "Cofre final! Compara fração com denominador igual.",
+   "renata": "Última do reino! Denominador comum ajuda a comparar."
+  }
+ ],
+ "reino-numeros-2": [
+  {
+   "x": 4,
+   "pedroca": "Ache a regra do padrão antes de tudo.",
+   "renata": "Primeiro descubra a regra, depois prevê o próximo."
+  },
+  {
+   "x": 45,
+   "pedroca": "Soma? Multiplica? Repete? Qual é a regra?",
+   "renata": "Olha a diferença entre um número e o seguinte."
+  },
+  {
+   "x": 95,
+   "pedroca": "Travou? Escreve os termos um a um.",
+   "renata": "Se travar, anota os termos na ordem, visse?"
+  }
+ ]
+}

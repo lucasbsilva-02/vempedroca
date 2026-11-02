@@ -1,0 +1,454 @@
+{
+ "schema": 1,
+ "id": "reino-numeros-3",
+ "worldId": "reino-numeros",
+ "title": "A Fortaleza das Frações",
+ "order": 3,
+ "discipline": "Matemática",
+ "grade": "6º ano",
+ "difficulty": 2,
+ "competency": "Frações, equivalência e relações proporcionais",
+ "objective": "Representar partes de um todo com frações, reconhecer frações equivalentes e aplicar proporção em situações do dia a dia.",
+ "narrative": "A Fortaleza guarda seus tesouros em partes iguais. Só quem domina as frações e as proporções consegue abrir o cofre final do reino!",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "recife",
+  "skyTint": 8957120,
+  "tint": 9477296,
+  "midTint": 8425632,
+  "far": [
+   "sinagoga",
+   "pred8",
+   "pred3",
+   "cinema",
+   "pred7",
+   "pred2",
+   "pred1"
+  ],
+  "mid": [
+   "wazul",
+   "wazulesc",
+   "wlaranja"
+  ]
+ },
+ "boss": {
+  "name": "Rataão, Guardião do Cofre",
+  "intro": "O Guardião do Cofre reuniu tudo o que você aprendeu no Reino! Acerte as quatro perguntas para abrir o cofre.",
+  "requiredCorrect": 4,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Uma receita usa 2 xícaras de farinha para 3 pães. Quantas xícaras são necessárias para 6 pães?",
+    "options": [
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Os 6 pães são o dobro de 3, então a farinha também dobra: 2 × 2 = 4 xícaras.",
+    "hint": "Quantas vezes a quantidade de pães aumentou?"
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Qual fração é maior: 3/4 ou 2/3?",
+    "options": [
+     "3/4",
+     "2/3",
+     "São iguais",
+     "Não é possível comparar"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Com denominador 12: 3/4 = 9/12 e 2/3 = 8/12. Logo 3/4 é maior.",
+    "hint": "Procure um denominador comum para as duas frações."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "São 5 salas com 12 tesouros cada. Se 1/4 de todos os tesouros foi levado, quantos foram levados?",
+    "options": [
+     "12",
+     "15",
+     "20",
+     "25"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! O total é 5 × 12 = 60 e 1/4 de 60 é 60 ÷ 4 = 15.",
+    "hint": "Calcule primeiro o total e depois divida em 4 partes iguais."
+   },
+   {
+    "id": "b4",
+    "type": "multiple_choice",
+    "prompt": "Na sequência 1/2, 1, 3/2, 2, ... qual é o próximo termo?",
+    "options": [
+     "5/2",
+     "3",
+     "9/4",
+     "7/2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! A regra é somar 1/2: 2 + 1/2 = 5/2.",
+    "hint": "Veja quanto se soma de um termo para o outro."
+   }
+  ]
+ },
+ "bncc": {
+  "code": "",
+  "description": "Proposta pedagógica editável — ainda não validada com a BNCC.",
+  "validated": false
+ },
+ "tiles": [
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  ".........................--.....................--......--...............................--.............................",
+  ".....................--.....................--...................--..--......................--.........................",
+  "........................................................................................................................",
+  "######################...####################...##################...#####################...###########################",
+  "######################...####################...##################...#####################...###########################"
+ ],
+ "objects": [
+  {
+   "id": "start",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 8,
+   "y": 9,
+   "title": "Dica: parte e todo",
+   "text": "Uma fração mostra partes iguais de um todo: o denominador diz em quantas partes o todo foi dividido, e o numerador, quantas partes foram tomadas."
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 52,
+   "y": 9,
+   "title": "Dica: proporção",
+   "text": "Se uma quantidade dobra, triplica ou é dividida, os outros valores mudam na mesma proporção. Dobrar a receita é dobrar cada ingrediente."
+  },
+  {
+   "id": "sign3",
+   "type": "sign",
+   "x": 108,
+   "y": 9,
+   "title": "Dica final",
+   "text": "No desafio final, o Rataão mistura frações, proporção, operações e padrões. Ao comparar frações, procure um denominador comum."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 14,
+   "y": 9,
+   "title": "Guarda-Pitomba abre o livro do tesouro",
+   "text": "A Fortaleza tem 8 baús, e 3 deles já foram abertos. Uma torta foi dividida em 4 partes iguais e Pedroca comeu 1. A receita da cozinha real usa 2 xícaras de farinha para fazer 3 pães."
+  },
+  {
+   "id": "npc2",
+   "type": "npc",
+   "x": 74,
+   "y": 9,
+   "title": "Guarda-Pitomba lembra das salas",
+   "text": "A Fortaleza tem 5 salas com 12 tesouros em cada uma. Os tesouros serão repartidos em partes iguais entre as guardas, que seguem sempre a mesma regra de contagem."
+  },
+  {
+   "id": "c1",
+   "type": "collectible",
+   "x": 18,
+   "y": 8
+  },
+  {
+   "id": "c2",
+   "type": "collectible",
+   "x": 26,
+   "y": 6
+  },
+  {
+   "id": "c3",
+   "type": "collectible",
+   "x": 34,
+   "y": 9
+  },
+  {
+   "id": "c4",
+   "type": "collectible",
+   "x": 46,
+   "y": 6
+  },
+  {
+   "id": "c5",
+   "type": "collectible",
+   "x": 49,
+   "y": 6
+  },
+  {
+   "id": "c6",
+   "type": "collectible",
+   "x": 58,
+   "y": 6
+  },
+  {
+   "id": "c7",
+   "type": "collectible",
+   "x": 67,
+   "y": 6
+  },
+  {
+   "id": "c8",
+   "type": "collectible",
+   "x": 82,
+   "y": 9
+  },
+  {
+   "id": "c9",
+   "type": "collectible",
+   "x": 91,
+   "y": 6
+  },
+  {
+   "id": "c10",
+   "type": "collectible",
+   "x": 94,
+   "y": 6
+  },
+  {
+   "id": "c11",
+   "type": "collectible",
+   "x": 105,
+   "y": 9
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 40,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "Que fração dos baús já foi aberta?",
+    "options": [
+     "3/5",
+     "3/8",
+     "8/3",
+     "5/8"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! São 3 baús abertos em um total de 8: 3/8.",
+    "hint": "O denominador é o total de partes iguais."
+   }
+  },
+  {
+   "id": "q2",
+   "type": "question",
+   "x": 62,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q2",
+    "type": "multiple_choice",
+    "prompt": "Pedroca comeu 1 de 4 partes iguais da torta. Que fração da torta sobrou?",
+    "options": [
+     "1/4",
+     "3/4",
+     "4/3",
+     "1/2"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! O todo é 4/4. Comeu-se 1/4, então sobraram 4/4 − 1/4 = 3/4.",
+    "hint": "Quantas partes sobraram do total de 4?"
+   }
+  },
+  {
+   "id": "q3",
+   "type": "question",
+   "x": 101,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q3",
+    "type": "multiple_choice",
+    "prompt": "Qual fração é equivalente a 1/2?",
+    "options": [
+     "2/3",
+     "2/4",
+     "1/3",
+     "3/4"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! Multiplicando numerador e denominador por 2: 1/2 = 2/4.",
+    "hint": "Multiplique em cima e embaixo pelo mesmo número."
+   }
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 42,
+   "y": 9
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 70,
+   "y": 9
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 102,
+   "y": 9
+  },
+  {
+   "id": "ob1",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 29,
+   "y": 9
+  },
+  {
+   "id": "ob2",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 36,
+   "y": 9
+  },
+  {
+   "id": "ob3",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 56,
+   "y": 9
+  },
+  {
+   "id": "ob4",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 78,
+   "y": 9
+  },
+  {
+   "id": "ob5",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 98,
+   "y": 9
+  },
+  {
+   "id": "d1",
+   "type": "decor",
+   "asset": "banco",
+   "x": 6,
+   "y": 9
+  },
+  {
+   "id": "d2",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 12,
+   "y": 9
+  },
+  {
+   "id": "d3",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 19,
+   "y": 9
+  },
+  {
+   "id": "d4",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 32,
+   "y": 9
+  },
+  {
+   "id": "d5",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 40,
+   "y": 9
+  },
+  {
+   "id": "d6",
+   "type": "decor",
+   "asset": "banco",
+   "x": 50,
+   "y": 9
+  },
+  {
+   "id": "d7",
+   "type": "decor",
+   "asset": "mato4",
+   "x": 54,
+   "y": 9
+  },
+  {
+   "id": "d8",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 60,
+   "y": 9
+  },
+  {
+   "id": "d9",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 72,
+   "y": 9
+  },
+  {
+   "id": "d10",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 84,
+   "y": 9
+  },
+  {
+   "id": "d11",
+   "type": "decor",
+   "asset": "banco",
+   "x": 96,
+   "y": 9
+  },
+  {
+   "id": "d12",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 104,
+   "y": 9
+  },
+  {
+   "id": "boss",
+   "type": "boss",
+   "x": 112,
+   "y": 9
+  }
+ ],
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Fração é parte de um todo dividido igual.",
+   "renata": "Em cima, as partes tomadas; embaixo, o total de partes."
+  },
+  {
+   "x": 55,
+   "pedroca": "Dobrou a receita? Dobra tudo: é proporção!",
+   "renata": "Proporção: se dobra um, dobra o outro."
+  },
+  {
+   "x": 105,
+   "pedroca": "Cofre final! Compara fração com denominador igual.",
+   "renata": "Última do reino! Denominador comum ajuda a comparar."
+  }
+ ]
+}

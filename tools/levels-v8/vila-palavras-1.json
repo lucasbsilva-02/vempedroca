@@ -1,0 +1,439 @@
+{
+ "schema": 1,
+ "id": "vila-palavras-1",
+ "worldId": "vila-palavras",
+ "title": "A Feira de Dona Marta",
+ "order": 1,
+ "discipline": "Língua Portuguesa",
+ "grade": "6º ano",
+ "difficulty": 1,
+ "competency": "Interpretação de textos: informações explícitas, vocabulário e inferência simples",
+ "objective": "Localizar informações no texto, descobrir o sentido de palavras pelo contexto e inferir ideias simples.",
+ "bncc": {
+  "code": "",
+  "description": "Proposta pedagógica editável — ainda não validada com a BNCC.",
+  "validated": false
+ },
+ "narrative": "Pedroca chega à feira do bairro e precisa ajudar dona Marta a organizar a barraca antes do Rataão bagunçar tudo. Leia as placas com atenção!",
+ "theme": {
+  "character": "pedroca",
+  "sky": "#2fa3d8",
+  "bg": "recife"
+ },
+ "tiles": [
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................................................................................",
+  "........................................................--..............................................................",
+  ".......................................--...........--..........--......................................................",
+  ".............................................................--.........................................................",
+  "############################...#############################.......###############################...###################",
+  "############################...#############################.......###############################...###################"
+ ],
+ "objects": [
+  {
+   "id": "start",
+   "type": "start",
+   "x": 3,
+   "y": 9
+  },
+  {
+   "id": "sign1",
+   "type": "sign",
+   "x": 8,
+   "y": 9,
+   "title": "Dica: leia com calma",
+   "text": "Textos guardam informações escritas de forma direta. Quando a pergunta começar com 'o que', 'quem' ou 'quando', volte ao texto e procure a palavra-chave."
+  },
+  {
+   "id": "npc1",
+   "type": "npc",
+   "x": 14,
+   "y": 9,
+   "title": "Guarda-Pitomba lê um texto",
+   "text": "Na feira de São José, dona Marta vende bolo de rolo, tapioca e caldo de cana. Sempre que chove, ela cobre a barraca com uma lona azul e espera os fregueses voltarem. Ela diz que a feira é o lugar onde todo mundo se encontra."
+  },
+  {
+   "id": "c1",
+   "type": "collectible",
+   "x": 29,
+   "y": 7
+  },
+  {
+   "id": "q1",
+   "type": "question",
+   "x": 36,
+   "y": 7,
+   "title": "Bloco de pergunta",
+   "question": {
+    "id": "q1",
+    "type": "multiple_choice",
+    "prompt": "Segundo o texto, o que dona Marta faz quando chove?",
+    "options": [
+     "Fecha a feira",
+     "Cobre a barraca com uma lona azul",
+     "Vai embora para casa",
+     "Vende guarda-chuvas"
+    ],
+    "correctIndex": 1,
+    "explanation": "Correto! A informação está escrita de forma direta: ela cobre a barraca com uma lona azul.",
+    "hint": "Releia o trecho que começa com 'Sempre que chove'."
+   }
+  },
+  {
+   "id": "cp1",
+   "type": "checkpoint",
+   "x": 42,
+   "y": 9
+  },
+  {
+   "id": "ob1",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 47,
+   "y": 9
+  },
+  {
+   "id": "c2",
+   "type": "collectible",
+   "x": 56,
+   "y": 6
+  },
+  {
+   "id": "c3",
+   "type": "collectible",
+   "x": 64,
+   "y": 7
+  },
+  {
+   "id": "sign2",
+   "type": "sign",
+   "x": 70,
+   "y": 9,
+   "title": "Dica: palavras novas",
+   "text": "Quando uma palavra for desconhecida, olhe para as palavras ao redor. O contexto costuma mostrar quem está falando ou fazendo a ação."
+  },
+  {
+   "id": "cp2",
+   "type": "checkpoint",
+   "x": 84,
+   "y": 9
+  },
+  {
+   "id": "ob2",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 89,
+   "y": 9
+  },
+  {
+   "id": "ob3",
+   "type": "obstacle",
+   "asset": "roadblock",
+   "x": 94,
+   "y": 9
+  },
+  {
+   "id": "cp3",
+   "type": "checkpoint",
+   "x": 103,
+   "y": 9
+  },
+  {
+   "id": "boss",
+   "type": "boss",
+   "x": 112,
+   "y": 9
+  },
+  {
+   "id": "d15",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 6,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d16",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 11,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d17",
+   "type": "decor",
+   "asset": "banco",
+   "x": 12.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d18",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 17.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d19",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 20,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d20",
+   "type": "decor",
+   "asset": "mato4",
+   "x": 22.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d21",
+   "type": "decor",
+   "asset": "semaforo_am",
+   "x": 24.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d23",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 33,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d24",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 38,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d25",
+   "type": "decor",
+   "asset": "banco",
+   "x": 45,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d26",
+   "type": "decor",
+   "asset": "mato4",
+   "x": 50,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d28",
+   "type": "decor",
+   "asset": "semaforo_am",
+   "x": 57,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d29",
+   "type": "decor",
+   "asset": "mato3",
+   "x": 68,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d30",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 73.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d31",
+   "type": "decor",
+   "asset": "fusca",
+   "x": 77,
+   "y": 9,
+   "scale": 2,
+   "flip": true,
+   "anim": null
+  },
+  {
+   "id": "d32",
+   "type": "decor",
+   "asset": "parada",
+   "x": 81.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d33",
+   "type": "decor",
+   "asset": "mato1",
+   "x": 86,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d34",
+   "type": "decor",
+   "asset": "canteiro",
+   "x": 92,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d36",
+   "type": "decor",
+   "asset": "semaforo_am",
+   "x": 97.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d37",
+   "type": "decor",
+   "asset": "mato4",
+   "x": 106,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d38",
+   "type": "decor",
+   "asset": "banco",
+   "x": 108.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  },
+  {
+   "id": "d39",
+   "type": "decor",
+   "asset": "lixeira",
+   "x": 116.5,
+   "y": 9,
+   "scale": 1,
+   "flip": false,
+   "anim": null
+  }
+ ],
+ "boss": {
+  "name": "Rataão",
+  "intro": "O Rataão embaralhou as palavras da feira! Responda certo para desfazer a bagunça.",
+  "requiredCorrect": 3,
+  "questions": [
+   {
+    "id": "b1",
+    "type": "multiple_choice",
+    "prompt": "Quais produtos dona Marta vende na feira?",
+    "options": [
+     "Bolo de rolo, tapioca e caldo de cana",
+     "Pastel, suco e sorvete",
+     "Frutas, verduras e peixe",
+     "Roupas, bolsas e sapatos"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isso! Os produtos aparecem citados na primeira frase do texto.",
+    "hint": "Procure a lista logo no início do texto."
+   },
+   {
+    "id": "b2",
+    "type": "multiple_choice",
+    "prompt": "Em 'espera os fregueses voltarem', a palavra 'fregueses' quer dizer:",
+    "options": [
+     "Vizinhos",
+     "Feirantes",
+     "Clientes",
+     "Músicos"
+    ],
+    "correctIndex": 2,
+    "explanation": "Isso! Freguês é quem costuma comprar numa barraca; o contexto (esperar voltar) ajuda a perceber.",
+    "hint": "Pense em quem volta à barraca depois da chuva."
+   },
+   {
+    "id": "b3",
+    "type": "multiple_choice",
+    "prompt": "Quando dona Marta diz que a feira é o lugar onde todo mundo se encontra, ela quer dizer que a feira é:",
+    "options": [
+     "Um lugar só para comprar",
+     "Um espaço de convivência",
+     "Um lugar proibido",
+     "Um lugar vazio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isso! É uma inferência: além de vender, a feira reúne pessoas.",
+    "hint": "Esta resposta não está escrita no texto; pense no que a frase sugere."
+   }
+  ]
+ },
+ "tips": [
+  {
+   "x": 4,
+   "pedroca": "Bora, Renata! As placas ajudam nas perguntas. Leia com calma.",
+   "renata": "Oxe, Pedroca, olha aquela placa! Dica boa pras perguntas."
+  },
+  {
+   "x": 34,
+   "pedroca": "Dá um pulo embaixo do bloco ? pra abrir a pergunta.",
+   "renata": "Pula embaixo do bloco ?, visse? Ele guarda uma pergunta."
+  },
+  {
+   "x": 100,
+   "pedroca": "O Rataão tá aí! Lembra do texto da feira.",
+   "renata": "Segura a onda, o Rataão vem aí. Pensa no texto da feira!"
+  }
+ ]
+}
