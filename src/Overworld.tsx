@@ -170,7 +170,7 @@ export default function Overworld({ progress, hero, cityId, initialArea, onArea,
     if (n.state === 'locked') return flash('Bloqueada: conclua a fase anterior.')
     if (n.area) switchView(n.area); else if (n.level) onPlay(n.level)
   }, [cur, nodes, flash, switchView, onPlay])
-  const back = useCallback(() => { if (area) switchView(null); else onBack() }, [area, switchView, onBack])
+  const back = useCallback(() => onBack(), [onBack]) // v0.2: o seletor de áreas agora é o mapa de Recife em pixel (StateMap)
   useEffect(() => {
     const kd = (e: KeyboardEvent) => {
       const k = e.key.toLowerCase()

@@ -5,6 +5,10 @@ Instalar: `npm install` · Rodar: `npm run dev` (http://localhost:5173) · Build
 Teclado: setas/WASD andam, Espaço pula, ↑/W sobe cipó, E/Enter relê placas, Esc pausa. Toque: botão de direção (deslize) + PULAR.
 Parâmetros de teste: `?map` abre o mapa, `?play` ou `?play=<id>` abre uma fase, `?debug` expõe `window.__scene`, `?nobus` pula a chegada de ônibus, `?hitboxes` mostra colisões.
 
+## v0.2 do mapa (revisão REC-AREA01, 13/11/2026)
+- Mapa de Pernambuco e de Recife trocados pelo conceito aprovado (5 mesorregiões, seleção por pontos, regiões bloqueadas em cinza) e regras de rota, selo e carimbo. Uma linha por item em `docs/CHANGELOG-v0.2.md`; registro da revisão e perguntas em aberto em `docs/revisao-REC-AREA01.md`.
+- Parâmetros de teste: `?map` abre o estado inteiro; `?city` abre o mapa de Recife.
+
 ## Estado (v16 — Etapa 5: chefe final; inimigos inventados desligados)
 - **Sem personagens inventados:** capangas, ladrão, valentão, caranguejo, urubu e capangas-chefes não existem no jogo original e foram tirados das fases (`ENEMIES = false` em `tools/build-levels.mjs`). Nas fases ficam só os personagens originais: Pedroca, Renata, Guarda-Pitomba e o Rataão.
 - O motor de inimigos (`src/game/foes.ts`) e as artes provisórias continuam no projeto, desligados, para quando houver personagens desenhados.

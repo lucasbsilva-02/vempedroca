@@ -6,7 +6,7 @@ import Quiz from './Quiz'
 import { loadProgress, saveProgress, loadSound, saveSound } from './progress'
 import WorldMap from './WorldMap'
 import CharSelect from './CharSelect'
-import StateMap from './StateMap'
+import StateMap, { type MapView } from './StateMap'
 import Overworld from './Overworld'
 import type { Area } from './geo'
 import { CHARS, otherChar, loadChar, type CharId } from './game/characters'
@@ -164,15 +164,16 @@ function Play({ level, label, hero, onExit, onWin, onRestart, onNext }: { level:
 type Screen = 'title' | 'select' | 'state' | 'city' | 'map'
 export default function App() {
   const [prog, setProg] = useState<Progress>(loadProgress), [run, setRun] = useState(0), [sound, setSound] = useState(loadSound), [hero, setHero] = useState<CharId>(loadChar)
-  const [screen, setScreen] = useState<Screen>(() => (location.search.includes('city') ? 'city' : location.search.includes('map') ? 'state' : 'title')), [city, setCity] = useState('recife'), [area, setArea] = useState<Area | null>(null)
+  const [screen, setScreen] = useState<Screen>(() => (location.search.includes('city') || location.search.includes('map') ? 'state' : 'title')), [city] = useState('recife'), [area, setArea] = useState<Area | null>(null)
+  const [mapView, setMapView] = useState<MapView>(() => (location.search.includes('city') ? 'recife' : 'overview'))
   const [play, setPlay] = useState<Level | null>(() => { const q = new URLSearchParams(location.search); return q.has('play') ? (LEVELS.find(l => l.id === q.get('play')) ?? LEVELS[0]) : null })
   useEffect(() => saveProgress(prog), [prog])
   const start = (l: Level) => { setProg(p => ({ ...p, last: l.id })); setRun(r => r + 1); setPlay(l) }
   const finish = (l: Level, stars: number, score: number, ex: { cordel: boolean; artifact: boolean }) => setProg(p => { const o = p.levels[l.id]; return { ...p, last: l.id, levels: { ...p.levels, [l.id]: { done: true, score: Math.max(score, o?.score ?? 0), stars: Math.max(stars, o?.stars ?? 0), cordel: !!(o?.cordel || ex.cordel), artifact: !!(o?.artifact || ex.artifact) } } } })
-  if (play) { const nx = nextOf(play); return <Play key={play.id + ':' + run + ':' + hero} level={play} hero={hero} label={labelOf(play)} onExit={() => { setPlay(null); setScreen('city') }} onRestart={() => setRun(r => r + 1)} onWin={(st, sc, ex) => finish(play, st, sc, ex)} onNext={nx && isUnlocked(prog, nx) ? () => start(nx) : undefined} /> }
+  if (play) { const nx = nextOf(play); return <Play key={play.id + ':' + run + ':' + hero} level={play} hero={hero} label={labelOf(play)} onExit={() => { setPlay(null); setScreen(area ? 'city' : 'state') }} onRestart={() => setRun(r => r + 1)} onWin={(st, sc, ex) => finish(play, st, sc, ex)} onNext={nx && isUnlocked(prog, nx) ? () => start(nx) : undefined} /> }
   if (screen === 'select') return <CharSelect onConfirm={c => { setHero(c); setScreen('state') }} onBack={() => setScreen('title')} />
-  if (screen === 'state') return <StateMap onCity={id => { setCity(id); setScreen('city') }} onBack={() => setScreen('title')} />
-  if (screen === 'city') return <Overworld cityId={city} progress={prog} hero={hero} initialArea={area} onArea={setArea} onPlay={start} onBack={() => setScreen('state')} onList={() => { if (!area) setArea(null); setScreen('map') }} />
+  if (screen === 'state') return <StateMap progress={prog} initialView={mapView} onArea={a => { setArea(a); setMapView('recife'); setScreen('city') }} onBack={() => { setMapView('overview'); setScreen('title') }} />
+  if (screen === 'city') return <Overworld cityId={city} progress={prog} hero={hero} initialArea={area} onArea={setArea} onPlay={start} onBack={() => { setMapView('recife'); setScreen('state') }} onList={() => { if (!area) setArea(null); setScreen('map') }} />
   if (screen === 'map') return <WorldMap progress={prog} sound={sound} onSound={() => { const v = !sound; setSound(v); saveSound(v) }} onPlay={start} onBack={() => setScreen('city')} backLabel={'◀ Mapa 2.5D'} title={(area?.name ?? 'Recife').toUpperCase()} worldIds={area ? [area.worldId] : undefined} />
   const done = LEVELS.filter(l => prog.levels[l.id]?.done).length, total = LEVELS.reduce((n, l) => n + (prog.levels[l.id]?.stars ?? 0), 0)
   return (

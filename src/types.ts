@@ -26,4 +26,4 @@ export type Level = {
   /** v14 — artefato do museu que o Ratão roubou nesta fase (GDD 1.1); recuperado ao derrotá-lo */
   artifact?: { name: string; text: string }
 }
-export type Progress = { levels: Record<string, { done: boolean; stars: number; score: number; cordel?: boolean; artifact?: boolean }>; last?: string }
+export type Progress = { levels: Record<string, { done: boolean; stars: number; score: number; cordel?: boolean; artifact?: boolean }>; last?: string; /** v0.2 — cidades concluídas fora do Recife (opcional: saves antigos não têm) */ cities?: Record<string, { done: boolean }> }

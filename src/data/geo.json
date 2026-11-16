@@ -3,18 +3,119 @@
   "id": "pernambuco",
   "name": "Pernambuco"
  },
+ "map": {
+  "version": "0.2",
+  "native": [
+   640,
+   360
+  ],
+  "scale": 2,
+  "assets": "/assets/mapa/v0.2/"
+ },
+ "groups": {
+  "arco1": {
+   "name": "Arco 1 · Recife → Caruaru",
+   "blurb": "Passa pelo Grande Recife, pela Zona da Mata e pelo Agreste.",
+   "available": true,
+   "mesorregioes": [
+    1,
+    2,
+    3
+   ]
+  },
+  "sertao": {
+   "name": "Sertão",
+   "blurb": "Próximo trecho da aventura.",
+   "available": false,
+   "mesorregioes": [
+    4
+   ]
+  },
+  "saofrancisco": {
+   "name": "São Francisco",
+   "blurb": "Próximo trecho da aventura.",
+   "available": false,
+   "mesorregioes": [
+    5
+   ]
+  }
+ },
+ "routes": {
+  "N": {
+   "name": "Norte",
+   "road": "barro",
+   "cities": [
+    "REC",
+    "OLI",
+    "IGA",
+    "LIM",
+    "TOR",
+    "CAR"
+   ]
+  },
+  "C": {
+   "name": "Central",
+   "road": "BR",
+   "cities": [
+    "REC",
+    "CAM",
+    "VIT",
+    "GRA",
+    "BEZ",
+    "CAR"
+   ]
+  },
+  "S": {
+   "name": "Sul",
+   "road": "areia-litoral",
+   "cities": [
+    "REC",
+    "JAB",
+    "CAB",
+    "IPO",
+    "BON",
+    "BEZ",
+    "CAR"
+   ]
+  }
+ },
+ "seals": [
+  "TOR",
+  "GRA",
+  "BON"
+ ],
+ "final": "CAR",
+ "optional": [
+  "BEZ"
+ ],
  "cities": [
   {
    "id": "recife",
+   "code": "REC",
    "name": "Recife",
-   "available": true,
-   "lon": -34.88,
-   "lat": -8.05,
-   "blurb": "A capital: pontes, rios e ruas históricas. Primeira região da aventura.",
+   "title": "Recife",
+   "inclui": "",
+   "routes": [
+    "N",
+    "C",
+    "S"
+   ],
+   "point": [
+    527,
+    150
+   ],
+   "region": 1,
+   "neighbors": {
+    "cima": "OLI",
+    "baixo": "CAB",
+    "esquerda": "CAM",
+    "direita": null
+   },
+   "blurb": "Recife Antigo, rios, pontes e porto. Ponto de partida das três rotas.",
    "areas": [
     {
      "id": "rua-bom-jesus",
-     "name": "Rua do Bom Jesus",
+     "name": "Rua do Bom Jesus e Quatro Cantos",
      "worldId": "vila-palavras",
      "asset": "cenario/Sinagoga_RDBJ_blur.png",
      "blurb": "Casarões, placas e histórias. Leitura e interpretação.",
@@ -25,7 +126,7 @@
     },
     {
      "id": "cinema-sao-luiz",
-     "name": "Cinema São Luiz",
+     "name": "Cinema São Luiz e Rua da Aurora",
      "worldId": "reino-numeros",
      "asset": "cenario/Cinema_SAO_LUIZ.png",
      "blurb": "O reino das contas, dos padrões e das frações.",
@@ -36,7 +137,7 @@
     },
     {
      "id": "capibaribe",
-     "name": "Rio Capibaribe",
+     "name": "Rio Capibaribe e pontes",
      "worldId": "floresta-descobertas",
      "asset": "cenario/Predio_3_RDBJ_blur.png",
      "blurb": "Ciclo da água e ecossistemas.",
@@ -47,7 +148,7 @@
     },
     {
      "id": "marco-zero",
-     "name": "Marco Zero",
+     "name": "Marco Zero e Porto",
      "worldId": "expedicao-tempo-espaco",
      "asset": "cenario/Predio_6_RDBJ_blur.png",
      "blurb": "Mapas, tempo e paisagens.",
@@ -60,46 +161,292 @@
   },
   {
    "id": "olinda",
+   "code": "OLI",
    "name": "Olinda",
-   "available": false,
-   "lon": -34.85,
-   "lat": -8.01,
-   "dy": -16
+   "title": "Olinda",
+   "inclui": "",
+   "routes": [
+    "N"
+   ],
+   "point": [
+    540,
+    130
+   ],
+   "region": 2,
+   "neighbors": {
+    "cima": "IGA",
+    "baixo": "REC",
+    "esquerda": "CAM",
+    "direita": null
+   },
+   "blurb": "Sítio Histórico, ladeiras, casario e Carnaval."
   },
   {
-   "id": "porto-de-galinhas",
-   "name": "Porto de Galinhas",
-   "available": false,
-   "lon": -35.0,
-   "lat": -8.5
+   "id": "igarassu",
+   "code": "IGA",
+   "name": "Igarassu",
+   "title": "Igarassu",
+   "inclui": "",
+   "routes": [
+    "N"
+   ],
+   "point": [
+    523,
+    74
+   ],
+   "region": 3,
+   "neighbors": {
+    "cima": null,
+    "baixo": "OLI",
+    "esquerda": "LIM",
+    "direita": null
+   },
+   "blurb": "Sítio histórico e Mata Atlântica."
+  },
+  {
+   "id": "limoeiro",
+   "code": "LIM",
+   "name": "Limoeiro",
+   "title": "Limoeiro",
+   "inclui": "",
+   "routes": [
+    "N"
+   ],
+   "point": [
+    343,
+    88
+   ],
+   "region": 4,
+   "neighbors": {
+    "cima": null,
+    "baixo": "VIT",
+    "esquerda": "TOR",
+    "direita": "CAM"
+   },
+   "blurb": "Praça central, casarões e a Pedra do Cristo."
+  },
+  {
+   "id": "toritama",
+   "code": "TOR",
+   "name": "Toritama",
+   "title": "Região de Toritama",
+   "inclui": "Inclui Toritama, Vertentes e Taquaritinga do Norte.",
+   "routes": [
+    "N"
+   ],
+   "point": [
+    135,
+    135
+   ],
+   "region": 5,
+   "neighbors": {
+    "cima": null,
+    "baixo": "CAR",
+    "esquerda": null,
+    "direita": "BEZ"
+   },
+   "blurb": "Feira do Jeans e polo de confecção."
+  },
+  {
+   "id": "camaragibe",
+   "code": "CAM",
+   "name": "Camaragibe",
+   "title": "Região de Camaragibe",
+   "inclui": "Inclui Camaragibe e São Lourenço da Mata.",
+   "routes": [
+    "C"
+   ],
+   "point": [
+    497,
+    139
+   ],
+   "region": 6,
+   "neighbors": {
+    "cima": "IGA",
+    "baixo": "JAB",
+    "esquerda": "VIT",
+    "direita": "REC"
+   },
+   "blurb": "Vila da Fábrica, engenho e a mata de Aldeia."
+  },
+  {
+   "id": "vitoria-de-santo-antao",
+   "code": "VIT",
+   "name": "Vitória de Santo Antão",
+   "title": "Vitória de Santo Antão",
+   "inclui": "",
+   "routes": [
+    "C"
+   ],
+   "point": [
+    391,
+    174
+   ],
+   "region": 7,
+   "neighbors": {
+    "cima": "LIM",
+    "baixo": "IPO",
+    "esquerda": "GRA",
+    "direita": "JAB"
+   },
+   "blurb": "Estação de 1886, Sobradinho Mourisco e Mercado de Farinha."
+  },
+  {
+   "id": "gravata",
+   "code": "GRA",
+   "name": "Gravatá",
+   "title": "Gravatá",
+   "inclui": "",
+   "routes": [
+    "C"
+   ],
+   "point": [
+    301,
+    202
+   ],
+   "region": 8,
+   "neighbors": {
+    "cima": "LIM",
+    "baixo": "BON",
+    "esquerda": "BEZ",
+    "direita": "VIT"
+   },
+   "blurb": "Estação do Artesão, Polo Moveleiro e serra."
+  },
+  {
+   "id": "bezerros",
+   "code": "BEZ",
+   "name": "Bezerros",
+   "title": "Bezerros",
+   "inclui": "",
+   "routes": [
+    "C",
+    "S"
+   ],
+   "point": [
+    225,
+    210
+   ],
+   "region": 9,
+   "neighbors": {
+    "cima": "TOR",
+    "baixo": "BON",
+    "esquerda": "CAR",
+    "direita": "GRA"
+   },
+   "blurb": "Papangus, Serra Negra e xilogravura."
+  },
+  {
+   "id": "jaboatao-dos-guararapes",
+   "code": "JAB",
+   "name": "Jaboatão dos Guararapes",
+   "title": "Jaboatão dos Guararapes",
+   "inclui": "",
+   "routes": [
+    "S"
+   ],
+   "point": [
+    485,
+    169
+   ],
+   "region": 10,
+   "neighbors": {
+    "cima": "CAM",
+    "baixo": "CAB",
+    "esquerda": "VIT",
+    "direita": "REC"
+   },
+   "blurb": "Montes Guararapes, igreja barroca e a orla."
+  },
+  {
+   "id": "cabo-de-santo-agostinho",
+   "code": "CAB",
+   "name": "Cabo de Santo Agostinho",
+   "title": "Cabo de Santo Agostinho",
+   "inclui": "",
+   "routes": [
+    "S"
+   ],
+   "point": [
+    482,
+    226
+   ],
+   "region": 11,
+   "neighbors": {
+    "cima": "JAB",
+    "baixo": "IPO",
+    "esquerda": "VIT",
+    "direita": null
+   },
+   "blurb": "Falésias, Vila de Nazaré, forte e Engenho Massangana."
+  },
+  {
+   "id": "ipojuca",
+   "code": "IPO",
+   "name": "Ipojuca",
+   "title": "Ipojuca",
+   "inclui": "",
+   "routes": [
+    "S"
+   ],
+   "point": [
+    470,
+    264
+   ],
+   "region": 12,
+   "neighbors": {
+    "cima": "CAB",
+    "baixo": null,
+    "esquerda": "GRA",
+    "direita": null
+   },
+   "blurb": "Porto de Galinhas, piscinas naturais e Maracaípe."
+  },
+  {
+   "id": "bonito",
+   "code": "BON",
+   "name": "Bonito",
+   "title": "Bonito",
+   "inclui": "",
+   "routes": [
+    "S"
+   ],
+   "point": [
+    247,
+    290
+   ],
+   "region": 13,
+   "neighbors": {
+    "cima": "BEZ",
+    "baixo": null,
+    "esquerda": "CAR",
+    "direita": "IPO"
+   },
+   "blurb": "Cachoeiras, mirantes e Mata da Chuva."
   },
   {
    "id": "caruaru",
+   "code": "CAR",
    "name": "Caruaru",
-   "available": false,
-   "lon": -35.97,
-   "lat": -8.28
-  },
-  {
-   "id": "garanhuns",
-   "name": "Garanhuns",
-   "available": false,
-   "lon": -36.49,
-   "lat": -8.89
-  },
-  {
-   "id": "serra-talhada",
-   "name": "Serra Talhada",
-   "available": false,
-   "lon": -38.3,
-   "lat": -7.99
-  },
-  {
-   "id": "petrolina",
-   "name": "Petrolina",
-   "available": false,
-   "lon": -40.5,
-   "lat": -9.39
+   "title": "Caruaru",
+   "inclui": "",
+   "routes": [
+    "N",
+    "C",
+    "S"
+   ],
+   "point": [
+    167,
+    227
+   ],
+   "region": 14,
+   "neighbors": {
+    "cima": "TOR",
+    "baixo": "BON",
+    "esquerda": null,
+    "direita": "BEZ"
+   },
+   "blurb": "Feira, Alto do Moura, forró e o confronto com o Rei Ratão."
   }
  ]
 }

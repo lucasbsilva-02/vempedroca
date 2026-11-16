@@ -74,9 +74,16 @@ button{font:inherit;cursor:pointer}
 .char img{height:128px;image-rendering:pixelated;margin:6px 0}.char b{font-size:18px}.char small{font-family:system-ui,sans-serif;font-size:13px;color:var(--suave)}.char em{font-style:normal;font-size:11px;color:var(--amarelo)}
 .char.on{background:#2b0a3d;box-shadow:0 0 0 4px var(--amarelo),0 6px 0 #000}.char.on img{animation:pulo 1s infinite}
 @keyframes pulo{50%{transform:translateY(-6px)}}
-.pe{width:100%;max-width:860px;border:4px solid #000;border-radius:12px;image-rendering:pixelated;margin:10px 0}
-.mapt{font-family:var(--pix);font-size:10px;fill:#7fb2ff;opacity:.8}.cname{font-family:var(--pix);font-size:10px;fill:#fff;paint-order:stroke;stroke:#000;stroke-width:3px}
-.city .dot{fill:#7d6a4a;stroke:#000;stroke-width:3}.city.on .dot{fill:#ffb800;animation:pulso 1.2s infinite}.city{cursor:pointer}.city.sel .dot{stroke:#fff;stroke-width:4}.city:focus{outline:none}.city:focus .dot{stroke:#fff}
+/* v0.2 — mapa de Pernambuco em pixel: canvas 640×360 (resolução nativa do mapa), ampliado sem suavização (2× = 1280×720) */
+.statemap{max-width:1320px}
+.pe{position:relative;width:100%;max-width:1288px;margin:10px auto;border:4px solid #000;border-radius:12px;overflow:hidden;background:#0f0d0a}
+.pe canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;image-rendering:pixelated;image-rendering:crisp-edges}.pe canvas:focus-visible{outline:3px solid var(--amarelo);outline-offset:-3px}
+.pe-hint{position:absolute;left:8px;bottom:8px;margin:0;font-size:12px;background:rgba(15,13,10,.85);color:#f2ead7;padding:3px 8px;border-radius:4px;pointer-events:none}
+.statemap .info{text-align:left;max-width:1280px;margin:10px auto}.statemap .info .inclui{font-size:13px;color:#5b4a3a;margin-top:-4px}
+.pe-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}.pe-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pe-chip{font-family:var(--pix);font-size:10px;color:#fff;padding:3px 7px;border-radius:4px}.pe-chip.N{background:#9a4630}.pe-chip.C{background:#137f75}.pe-chip.S{background:#b07812}
+.pe-pill{font-family:var(--pix);font-size:10px;padding:3px 8px;border-radius:999px;border:2px solid currentColor}.pe-pill.done{color:#2c7a4f}.pe-pill.available,.pe-pill.open{color:#2e3d8f}.pe-pill.locked,.pe-pill.soon{color:#6d675c}
+.pe-phases{margin:4px 0;padding-left:18px}
 .areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-top:12px}
 .area{--wc:#ffb800;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px;border:4px solid #000;border-radius:14px;background:#1d0029;color:var(--tinta);box-shadow:0 6px 0 var(--wc);cursor:pointer;min-height:260px;font-family:var(--pix)}
 .area .bld{width:100%;height:128px;background:center bottom/auto 128px no-repeat;image-rendering:auto}.area b{font-size:14px;color:var(--wc)}.area small{font-family:system-ui,sans-serif;font-size:12px;color:var(--suave)}.area em{font-style:normal;font-size:11px;margin-top:auto;color:var(--amarelo)}
@@ -96,7 +103,7 @@ button{font:inherit;cursor:pointer}
 @media (max-width:640px),(max-height:420px){.panel.boss{max-height:calc(100% - 12px);overflow:auto}.panel.boss .opts{grid-template-columns:1fr}}
 .pad-r{display:flex;gap:10px;align-items:center}.pb.act{background:var(--amarelo);color:#14001d;width:auto;padding:0 14px;font-size:14px}
 .keys kbd{display:inline-block;min-width:22px;padding:1px 6px;border:2px solid var(--amarelo);border-radius:6px;color:var(--amarelo);font-family:var(--pix);font-size:12px;text-align:center}
-@media (prefers-reduced-motion:reduce){.char.on img,.city.on .dot,.tip{animation:none}}
+@media (prefers-reduced-motion:reduce){.char.on img,.tip{animation:none}}
 /* ---- v7: seletor 2.5D "Recife em miniatura" ---- */
 .ow{position:relative;height:100%;overflow:hidden;background:linear-gradient(#3aa7df 0,#8fd0ef 24%,#cfeefa 34%);color:var(--tinta);transition:opacity .24s;font-family:system-ui,sans-serif}.ow.fade{opacity:0}
 .ow-sky{position:absolute;left:0;right:0;top:0;height:24%;pointer-events:none}

@@ -31,4 +31,4 @@ Parâmetros de teste: `?map`, `?play=<id>`, `?debug`, `?nobus`, `?hitboxes`.
 
 ## Documentação
 
-O diário de desenvolvimento por versão está em [`docs/CHANGELOG.md`](docs/CHANGELOG.md), as artes ainda pendentes em [`docs/arte-pendente.md`](docs/arte-pendente.md) e o roteiro em [`docs/roadmap.md`](docs/roadmap.md).
+O diário de desenvolvimento por versão está em [`docs/CHANGELOG.md`](docs/CHANGELOG.md), a rodada v0.2 do mapa em [`docs/CHANGELOG-v0.2.md`](docs/CHANGELOG-v0.2.md), as artes ainda pendentes em [`docs/arte-pendente.md`](docs/arte-pendente.md) e o roteiro em [`docs/roadmap.md`](docs/roadmap.md).

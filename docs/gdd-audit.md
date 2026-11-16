@@ -20,8 +20,8 @@ Legenda: OK = implementado e testado · PARCIAL · AUSENTE · FUTURO = fora do M
 | Puzzles e cálculos | PARCIAL | Quizzes e problemas matemáticos; ainda sem puzzle físico |
 | Pixel art SNES; grafite, cordel, manguebeat | PARCIAL | Pixel art OK; identidade cultural aparece na logo e nas falas, ainda pouco no cenário |
 | Seleção de personagem (cada um com estilo musical) | OK | Pedroca (brega-funk, do GDD) e Renata; o estilo da Renata não consta nos materiais, então não foi inventado |
-| Mapa de Pernambuco → Recife → áreas → fases | OK | v7: maquete 2.5D de Recife com rio, pontes, praças e marcos de estado; 2 de 4 áreas jogáveis |
-| Proporções 32×32 / 128×128 / 960×540 | PARCIAL | Sprites 32/64 px e prédios 128 px; resolução interna do jogo difere de 960×540 |
+| Mapa de Pernambuco → Recife → áreas → fases | OK | v0.2: estado com 5 mesorregiões → Arco 1 por pontos → Recife com 4 áreas (3 com fases) → rua 2.5D com as fases. Ver `docs/CHANGELOG-v0.2.md` |
+| Proporções: tile 32×32 / prédios 128×128 / resolução-base 1280×720 | PENDENTE DE VALIDAÇÃO | v0.2 (I-05/R-01): o GDD dizia 960×540. O jogo desenha 640×360 e amplia 2× (= 1280×720), tile 32, quadro de personagem 64×64 com corpo de cerca de 32 px. Falta validar com programador e arte e corrigir o texto do GDD |
 
 ## Atualização v14 (ver docs/roadmap.md)
 | Requisito do GDD | Estado |
@@ -32,3 +32,16 @@ Legenda: OK = implementado e testado · PARCIAL · AUSENTE · FUTURO = fora do M
 | Cordéis escondidos | OK — um por fase |
 | Mecânica nova por região | PARCIAL — trânsito (ruas do Recife) e, na v15, rio com canoas/troncos e escalar cipós (Floresta das Descobertas); falta vento |
 | Passagens subterrâneas | OK — vales acessíveis pela superfície |
+
+## Atualização v0.2 — correções que o GDD precisa receber (decisões de 13/11/2026)
+O documento do GDD não está neste repositório; quem corrige é a Gestão. Detalhes em `docs/CHANGELOG-v0.2.md` e `docs/revisao-REC-AREA01.md`.
+| Assunto | Texto correto |
+|---|---|
+| Resolução e tile (I-05/R-01, pendente de validação) | Tile 32×32. Tela interna 640×360, ampliada 2× = 1280×720. Mapa de Pernambuco 640×360 (2×) |
+| Personagem | Quadro de 64×64 com cerca de 32 px de corpo |
+| Engine | Phaser (web), não Unity |
+| Público | 6º e 7º ano |
+| Selos (I-01) | Selo de rota só em Toritama, Gravatá e Bonito. As demais cidades dão "carimbo da cidade", sem efeito no desbloqueio |
+| Bezerros (I-02) | Opcional. Caruaru abre com os 3 selos |
+| REC-01-03 (I-04) | Primeiro confronto é um encontro sem golpes (encurralar o capanga). A variante de 3 pisões fica guardada |
+| Área 1 de Recife (I-06) | O nome "Quatro Cantos" permanece |
