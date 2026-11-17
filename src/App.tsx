@@ -19,6 +19,17 @@ type Modal =
   | { kind: 'win'; stars: number; score: number; cordel: boolean; artifact: boolean } | { kind: 'cordel'; o: LevelObject } | null
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v))
+/* v17 — celular: tela cheia (onde o navegador permite) e travar em paisagem; no iPhone o Safari não deixa,
+   então o botão some e o aviso de girar o celular continua valendo */
+const canFull = () => { try { return !!document.documentElement.requestFullscreen } catch { return false } }
+const goFull = () => {
+  const d = document as Document & { fullscreenElement?: Element | null }
+  if (d.fullscreenElement) { void document.exitFullscreen?.(); return }
+  document.documentElement.requestFullscreen?.({ navigationUI: 'hide' }).then(() => {
+    const o = screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> }
+    return o?.lock?.('landscape')
+  }).catch(() => undefined)
+}
 const isTouch = () => { try { return window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window } catch { return false } }
 
 function Play({ level, label, hero, onExit, onWin, onRestart, onNext }: { level: Level; label: string; hero: CharId; onExit: () => void; onWin: (stars: number, score: number, extra: { cordel: boolean; artifact: boolean }) => void; onRestart: () => void; onNext?: () => void }) {
@@ -26,6 +37,7 @@ function Play({ level, label, hero, onExit, onWin, onRestart, onNext }: { level:
   const [hud, setHud] = useState({ lives: 3, score: 0, coins: 0 })
   const [modal, setModal] = useState<Modal>(null), [toast, setToast] = useState(''), [err, setErr] = useState('')
   const [snd, setSnd] = useState(loadSound), [answered, setAnswered] = useState(0), [boss, setBoss] = useState(false), [intro, setIntro] = useState(false), [touch] = useState(isTouch), [goal, setGoal] = useState(false), winRef = useRef<() => void>(() => {})
+  const [portraitOk, setPortraitOk] = useState(false), climbs = level.tiles.some(r => r.includes('H'))
   const [cordel, setCordel] = useState(false), [power, setPower] = useState(false), cordelRef = useRef(false)
   cordelRef.current = cordel
   const hasCordel = level.objects.some(o => o.type === 'cordel')
@@ -90,6 +102,12 @@ function Play({ level, label, hero, onExit, onWin, onRestart, onNext }: { level:
     onPointerUp: (e: React.PointerEvent) => { if (e.pointerId === dirId.current) { dirId.current = null; scene.current?.press('L', false); scene.current?.press('R', false) } },
     onPointerCancel: (e: React.PointerEvent) => { if (e.pointerId === dirId.current) { dirId.current = null; scene.current?.press('L', false); scene.current?.press('R', false) } },
   }
+  const downId = useRef<number | null>(null)
+  const downProps = {
+    onPointerDown: (e: React.PointerEvent) => { e.preventDefault(); downId.current = e.pointerId; (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); scene.current?.press('D', true) },
+    onPointerUp: (e: React.PointerEvent) => { if (e.pointerId === downId.current) { downId.current = null; scene.current?.press('D', false) } },
+    onPointerCancel: (e: React.PointerEvent) => { if (e.pointerId === downId.current) { downId.current = null; scene.current?.press('D', false) } },
+  }
   const jumpProps = {
     onPointerDown: (e: React.PointerEvent) => { e.preventDefault(); jumpId.current = e.pointerId; (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); scene.current?.press('J', true) },
     onPointerUp: (e: React.PointerEvent) => { if (e.pointerId === jumpId.current) { jumpId.current = null; scene.current?.press('J', false) } },
@@ -117,10 +135,12 @@ function Play({ level, label, hero, onExit, onWin, onRestart, onNext }: { level:
         {goal && <span className="chip goal" title="Objetivo: chegar à estação de ônibus">→ ESTAÇÃO</span>}
         {hasCordel && <span className={'chip' + (cordel ? ' cordel' : '')} title="Cordel escondido desta fase">{cordel ? '✦ CORDEL' : '✧ CORDEL ?'}</span>}
         {power && <span className="chip power" title="Power-up: todas as moedas">{hero === 'pedroca' ? 'PEDROCA RATÃO' : 'RENATA RATA'}</span>}
+        {touch && canFull() && <button className="full" type="button" title="Tela cheia" aria-label="Tela cheia" onClick={goFull}>⛶</button>}
         <button className="pause" type="button" disabled={!!modal} title={modal ? 'Feche o painel aberto para pausar' : 'Pausar (Esc)'} onClick={() => { if (modal) return; scene.current?.freeze(); setModal({ kind: 'pause' }) }}>II PAUSA</button>
       </header>
       <div className={'stage' + (intro ? ' cine' : '')} ref={stage}>
         <div className="cv" ref={host} />
+        {touch && !portraitOk && <div className="rotate" role="status"><p><b>Gire o celular</b> para jogar deitado: a tela fica maior.</p><button className="btn alt" type="button" onClick={() => setPortraitOk(true)}>Jogar assim mesmo</button></div>}
         {toast && !open && <div className="banner">{toast}</div>}
         {tip && !open && <div className="tip" role="status"><img src={otherChar(hero) === 'renata' ? '/assets/original/ui/ren_portrait.png' : '/assets/original/ui/ped_portrait.png'} alt="" /><div><b>{tip.who}</b><p>{tip.text}</p></div></div>}
         {err && <div className="banner err">{err}</div>}
@@ -156,7 +176,7 @@ function Play({ level, label, hero, onExit, onWin, onRestart, onNext }: { level:
       </footer>}
       {touch && <div className="pad" onContextMenu={e => e.preventDefault()}>
         <div className="pad-dir" ref={dir} {...dirProps}><span className="pb">◀</span><span className="pb">▶</span></div>
-        <div className="pad-r">{near && <button className="pb act" type="button" onPointerDown={e => { e.preventDefault(); scene.current?.interact() }}>INTERAGIR</button>}<button className="pb jump" type="button" {...jumpProps}>PULAR</button></div>
+        <div className="pad-r">{climbs && <button className="pb down" type="button" aria-label="Descer do cipó" {...downProps}>▼</button>}{near && <button className="pb act" type="button" onPointerDown={e => { e.preventDefault(); scene.current?.interact() }}>INTERAGIR</button>}<button className="pb jump" type="button" {...jumpProps}>PULAR</button></div>
       </div>}
     </div>)
 }

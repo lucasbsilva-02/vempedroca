@@ -9,7 +9,7 @@ Jogo educacional de plataforma, contextualizado em Pernambuco, para estudantes d
 - Mapa de mundos e fases (Português, Matemática e Ciências), com perguntas em blocos, chefão e artefatos.
 - Viagem de ônibus no início e no fim de cada fase, trânsito com semáforo, rio com canoas, escalada em cipós e bloqueios educativos.
 - Personagens selecionáveis (Pedroca e Renata) e acompanhante com orientação.
-- Controles por teclado e por toque.
+- Controles por teclado e por toque (celular deitado, com tela cheia no Android).
 
 ## Tecnologias
 

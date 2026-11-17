@@ -27,7 +27,7 @@ const GROUP_IDS = Object.keys(GROUPS) as GroupId[]
 const FLAG = ['kkk.................', 'kkkkkkkkkkkkkkkkkkkk', 'kkkrrrrrrrrrrrrrrrrk', 'kkkrrrrrrrrrrrrrrrk.', 'kkkrryyrrrrrryyrrk..', 'kkkrryyrrrrrryyrk...', 'kkkrrrrrrrrrrrrk....', 'kkkrryyrrrrrryyrk...', 'kkkrryyrrrrrryyrrk..', 'kkkrrrrrrrrrrrrrrrk.', 'kkkrrrrrrrrrrrrrrrrk', 'kkkkkkkkkkkkkkkkkkkk',
   ...Array(12).fill('kkk.................'), 'kkkkkkkkk...........', 'kkkkkkkkk...........']
 const LOCK = ['.kkk.', 'k...k', 'kkkkk', 'kYqYk', 'kqYqk', 'kkkkk']
-const HINT: Record<MapView, string> = { overview: 'Clique numa região do estado', arco1: 'Clique num ponto · Esc volta', recife: 'Clique numa área · Esc volta', sertao: 'Região indisponível · clique para voltar', saofrancisco: 'Região indisponível · clique para voltar' }
+const HINT: Record<MapView, string> = { overview: 'Toque numa região do estado', arco1: 'Toque num ponto · Esc volta', recife: 'Toque numa área · Esc volta', sertao: 'Região indisponível · toque para voltar', saofrancisco: 'Região indisponível · toque para voltar' }
 const ST_TXT: Record<CityState, string> = { done: 'CONCLUÍDA', available: 'DISPONÍVEL', locked: 'BLOQUEADA' }
 const AREA_TXT = { done: 'CONCLUÍDA', open: 'DISPONÍVEL', locked: 'BLOQUEADA', soon: 'EM BREVE' }
 
@@ -185,14 +185,14 @@ export default function StateMap({ progress, initialView = 'overview', onArea, o
       <div className="pe-acts"><button className="btn alt" onClick={back}>◀ Estado inteiro</button></div></>
   } else if (view === 'recife') { const a = aSel ? areas[aSel - 1] : null, st = aSel ? aStates[aSel - 1] : null, w = a && WORLDS.find(x => x.id === a.worldId), ls = w ? levelsOf(w) : []
     card = <><p className="kicker">Recife · escolha uma área</p>
-      {!a || !st ? <><h3>Recife</h3><p>Quatro áreas. Clique numa área do mapa para ver as fases.</p></>
+      {!a || !st ? <><h3>Recife</h3><p>Quatro áreas. Toque numa área do mapa para ver as fases.</p></>
         : <><h3>Área {aSel} · {a.name}</h3><div className="pe-row"><span className={'pe-pill ' + st}>{AREA_TXT[st]}</span>{st !== 'soon' && <span>{areaState(progress, a).done}/3 fases</span>}</div>
           <p>{st === 'soon' ? 'Em breve: esta área ainda não tem fases.' : st === 'locked' ? 'Conclua a área anterior para liberar.' : `${w!.name} · ${w!.discipline}. ${a.blurb}`}</p>
           {st !== 'soon' && <ul className="pe-phases">{ls.map(l => <li key={l.id}>{labelOf(l)} · {l.title}{progress.levels[l.id]?.done ? ' ✓' : ''}</li>)}</ul>}</>}
       <div className="pe-acts">{a && <button className="btn" disabled={st !== 'open' && st !== 'done'} onClick={enterArea}>Entrar na área</button>}<button className="btn alt" onClick={back}>◀ Pernambuco</button></div></>
   } else if (!city) {
     card = <><p className="kicker">Arco 1 · escolha um ponto</p><h3>Escolha uma cidade</h3>
-      <p>Clique num ponto azul. Os pontos com cadeado ao lado ainda estão bloqueados. Cidades concluídas aparecem com uma bandeirinha no lugar do ponto.</p>
+      <p>Toque num ponto azul. Os pontos com cadeado ao lado ainda estão bloqueados. Cidades concluídas aparecem com uma bandeirinha no lugar do ponto.</p>
       <div className="pe-row"><span>Selos de rota: {seals}/{SEALS.length}</span></div>
       <div className="pe-acts"><button className="btn alt" onClick={back}>◀ Estado inteiro</button></div></>
   } else { const st = states[city.code]

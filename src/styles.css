@@ -181,3 +181,44 @@ button{font:inherit;cursor:pointer}
 .chip.cordel{border-color:#ffe27a;color:#ffe27a}.chip.power{border-color:#ff6bd5;color:#ff6bd5;animation:goalPulse .6s steps(2) infinite}
 .panel .verso{white-space:pre-line;font-style:italic;line-height:1.5}
 .panel .artefato{display:flex;gap:10px;align-items:flex-start}.panel .artefato img{width:36px;height:36px;image-rendering:pixelated;flex:none}
+/* v17 — celular. Deitado (tela baixa), os controles flutuam sobre o jogo, semitransparentes, e o palco usa a altura toda.
+   Em pé, um aviso sugere girar o celular (dá para jogar assim mesmo). */
+.game.touch{touch-action:none;-webkit-touch-callout:none;position:relative}
+.full{background:var(--noite2);color:var(--amarelo);border:2px solid var(--amarelo);font-family:var(--pix);font-size:16px;min-height:32px;min-width:40px;padding:2px 8px}
+.pb.down{width:64px;font-size:18px}
+.rotate{display:none}
+@media (pointer:coarse) and (orientation:portrait){
+  .rotate{display:flex;position:absolute;inset:0;z-index:4;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;background:rgba(10,0,16,.86);font-size:1.05rem}
+  .rotate p{margin:0;max-width:280px}.rotate p::before{content:"↻";display:block;font-size:44px;color:var(--amarelo);line-height:1.1}
+}
+@media (pointer:coarse) and (orientation:landscape) and (max-height:540px){
+  .game.touch{padding:4px 6px;gap:4px}
+  .game.touch .hud{font-size:10px;gap:4px;min-height:26px}
+  .game.touch .chip{padding:1px 5px}
+  .game.touch .pause{font-size:11px;min-height:28px;padding:2px 8px}
+  .game.touch .pad{position:absolute;left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));z-index:3;pointer-events:none;padding:0}
+  .game.touch .pad-dir,.game.touch .pad-r{pointer-events:auto}
+  .game.touch .pb{width:68px;height:60px;opacity:.78;background:rgba(29,0,41,.7)}
+  .game.touch .pb.jump{width:104px;background:rgba(255,184,0,.85)}
+  .game.touch .pb.act{background:rgba(255,184,0,.9);opacity:1}
+  .game.touch .pb.down{width:56px}
+}
+
+.game.touch .scrim,.game.touch .panel{touch-action:pan-y}
+/* v17 — celular deitado (tela baixa): título compacto; mapa e cartão lado a lado, sem precisar rolar */
+@media (orientation:landscape) and (max-height:540px){
+  .title{padding:8px 12px 16px;gap:4px}.title .logo{width:auto;max-height:34dvh}.title .hero{width:64px;height:64px;margin-top:0}.title .start img{width:min(200px,36vw)}
+  .statemap{display:grid;grid-template-columns:min(66vw,calc((100dvh - 60px) * 16 / 9)) 1fr;gap:6px 10px;padding:6px 10px;align-items:start;max-width:none}
+  .statemap .map-top{grid-column:1/-1}.statemap .map-top .btn{min-height:34px;padding:4px 10px}
+  .statemap .pe{margin:0;border-width:3px}.statemap .pe-hint{font-size:10px}
+  .statemap .info{margin:0;max-height:calc(100dvh - 60px);overflow:auto;font-size:14px}.statemap .info h3{margin:4px 0}
+}
+@media (orientation:landscape) and (max-height:540px){
+  .select{padding:6px 12px}.select .logo.sm{max-height:16dvh;width:auto}.select h1{margin:2px 0;font-size:16px}
+  .chars{margin:6px 0;gap:10px;flex-wrap:nowrap}.char{min-height:0;flex-direction:row;width:min(330px,46vw);padding:8px 10px;text-align:left}
+  .char img{height:72px;margin:0}.char b{font-size:15px}.select .acts{justify-content:center;margin-top:6px}
+}
+@media (orientation:landscape) and (max-height:540px){
+  .char em{display:none}.char small{font-size:12px}
+  .statemap .info{font-size:13px;padding:8px 10px}.statemap .info h3{font-size:14px}.statemap .info .btn{min-height:38px;padding:6px 12px}
+}

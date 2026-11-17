@@ -2,8 +2,17 @@
 > **Artes provisórias no jogo:** veja `docs/arte-pendente.md` — lista das artes que ainda precisam ser desenhadas (hoje geradas por código).
 
 Instalar: `npm install` · Rodar: `npm run dev` (http://localhost:5173) · Build: `npm run build`
-Teclado: setas/WASD andam, Espaço pula, ↑/W sobe cipó, E/Enter relê placas, Esc pausa. Toque: botão de direção (deslize) + PULAR.
+Teclado: setas/WASD andam, Espaço pula, ↑/W sobe cipó, E/Enter relê placas, Esc pausa. Toque: ◀ ▶ (dá para deslizar o polegar), PULAR (segurar sobe o cipó), ▼ desce o cipó, INTERAGIR perto de placas.
 Parâmetros de teste: `?map` abre o mapa, `?play` ou `?play=<id>` abre uma fase, `?debug` expõe `window.__scene`, `?nobus` pula a chegada de ônibus, `?hitboxes` mostra colisões.
+
+## v17 — celular e publicação (17/11/2026)
+- **Celular deitado:** os botões (◀ ▶, PULAR, INTERAGIR) flutuam sobre o jogo, semitransparentes, e a tela de jogo usa a altura toda. Título, escolha de personagem e mapa de Pernambuco ficam compactos (mapa e cartão lado a lado), sem precisar rolar.
+- **Celular em pé:** aviso "Gire o celular", com a opção "Jogar assim mesmo".
+- **Botão ▼** nas fases com cipó, para descer (antes só dava no teclado).
+- **Tela cheia** (⛶ no HUD) onde o navegador permite (Android). No iPhone o Safari não deixa; dá para usar "Adicionar à Tela de Início", que abre sem a barra do navegador (`public/manifest.webmanifest`).
+- Sem zoom por toque duplo nos controles, e os painéis de pergunta continuam rolando com o dedo.
+- Dicas do mapa dizem "Toque" em vez de "Clique".
+- **Publicado na Vercel** (projeto `vem-pedroca`), com Vercel Authentication: só quem entra na conta da Vercel da equipe abre o jogo. Cada push no `main` publica de novo.
 
 ## v0.2 do mapa (revisão REC-AREA01, 13/11/2026)
 - Mapa de Pernambuco e de Recife trocados pelo conceito aprovado (5 mesorregiões, seleção por pontos, regiões bloqueadas em cinza) e regras de rota, selo e carimbo. Uma linha por item em `docs/CHANGELOG-v0.2.md`; registro da revisão e perguntas em aberto em `docs/revisao-REC-AREA01.md`.

@@ -576,7 +576,7 @@ export class GameScene extends Phaser.Scene {
   }
   private peek = false
   markRead(id: string) { const e = this.ents.find(k => k.o.id === id); if (e?.hint) { e.hint.destroy(); e.hint = undefined } }
-  press(k: 'L' | 'R' | 'J', down: boolean) { if (this.locked && down) return; if (k === 'J' && down && !this.inp.J) { this.inp.jp = true; this.jSrc = 'touch' } this.inp[k] = down }
+  press(k: 'L' | 'R' | 'J' | 'D', down: boolean) { if (this.locked && down) return; if (k === 'J' && down && !this.inp.J) { this.inp.jp = true; this.jSrc = 'touch' } this.inp[k] = down }
   clearInput() { this.inp.L = this.inp.R = this.inp.J = this.inp.jp = this.inp.U = this.inp.D = false }
   setViewWidth(vw: number) {
     if (vw === this.VW) return
