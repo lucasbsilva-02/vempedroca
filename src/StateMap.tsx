@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { CITIES, GROUPS, MAP, OPTIONAL, ROUTES, SEALS, FINAL, areaState, areaStatus, cityOf, cityState, prevOf, rewardOf, sealsOf, type Area, type City, type CityState, type Dir, type GroupId } from './geo'
 import { WORLDS, levelsOf, labelOf } from './catalog'
 import type { Progress } from './types'
+import { Icon, Stripes } from './ui/Brand'
 
 /* Mapa de Pernambuco v0.2 (aprovado em conceito por Aline Cristina / Gestão em 05/11/2026; decisões de 13/11/2026).
    Portado do protótipo aprovado (MAPA_PERNAMBUCO/v0.2/mapa-v0.2.html). Navegação: visão geral → Arco → cidade → área.
@@ -28,6 +29,7 @@ const FLAG = ['kkk.................', 'kkkkkkkkkkkkkkkkkkkk', 'kkkrrrrrrrrrrrrrr
   ...Array(12).fill('kkk.................'), 'kkkkkkkkk...........', 'kkkkkkkkk...........']
 const LOCK = ['.kkk.', 'k...k', 'kkkkk', 'kYqYk', 'kqYqk', 'kkkkk']
 const HINT: Record<MapView, string> = { overview: 'Toque numa região do estado', arco1: 'Toque num ponto · Esc volta', recife: 'Toque numa área · Esc volta', sertao: 'Região indisponível · toque para voltar', saofrancisco: 'Região indisponível · toque para voltar' }
+const SUB: Record<MapView, string> = { overview: 'Escolha um trecho do estado', arco1: 'Arco 1 · escolha uma cidade', recife: 'Recife · escolha uma área', sertao: 'Sertão · ainda indisponível', saofrancisco: 'São Francisco · ainda indisponível' }
 const ST_TXT: Record<CityState, string> = { done: 'CONCLUÍDA', available: 'DISPONÍVEL', locked: 'BLOQUEADA' }
 const AREA_TXT = { done: 'CONCLUÍDA', open: 'DISPONÍVEL', locked: 'BLOQUEADA', soon: 'EM BREVE' }
 
@@ -182,19 +184,19 @@ export default function StateMap({ progress, initialView = 'overview', onArea, o
   } else if (view === 'sertao' || view === 'saofrancisco') {
     card = <><p className="kicker">Região</p><h3>{GROUPS[view].name}</h3><p>Esta região faz parte de um próximo trecho da aventura.</p>
       <div className="pe-row"><span className="pe-pill locked">INDISPONÍVEL</span></div>
-      <div className="pe-acts"><button className="btn alt" onClick={back}>◀ Estado inteiro</button></div></>
+      <div className="pe-acts"><button className="btn alt" onClick={back}><Icon name="back" size={16} />Estado inteiro</button></div></>
   } else if (view === 'recife') { const a = aSel ? areas[aSel - 1] : null, st = aSel ? aStates[aSel - 1] : null, w = a && WORLDS.find(x => x.id === a.worldId), ls = w ? levelsOf(w) : []
     card = <><p className="kicker">Recife · escolha uma área</p>
       {!a || !st ? <><h3>Recife</h3><p>Quatro áreas. Toque numa área do mapa para ver as fases.</p></>
         : <><h3>Área {aSel} · {a.name}</h3><div className="pe-row"><span className={'pe-pill ' + st}>{AREA_TXT[st]}</span>{st !== 'soon' && <span>{areaState(progress, a).done}/3 fases</span>}</div>
           <p>{st === 'soon' ? 'Em breve: esta área ainda não tem fases.' : st === 'locked' ? 'Conclua a área anterior para liberar.' : `${w!.name} · ${w!.discipline}. ${a.blurb}`}</p>
           {st !== 'soon' && <ul className="pe-phases">{ls.map(l => <li key={l.id}>{labelOf(l)} · {l.title}{progress.levels[l.id]?.done ? ' ✓' : ''}</li>)}</ul>}</>}
-      <div className="pe-acts">{a && <button className="btn" disabled={st !== 'open' && st !== 'done'} onClick={enterArea}>Entrar na área</button>}<button className="btn alt" onClick={back}>◀ Pernambuco</button></div></>
+      <div className="pe-acts">{a && <button className="btn" disabled={st !== 'open' && st !== 'done'} onClick={enterArea}>Entrar na área</button>}<button className="btn alt" onClick={back}><Icon name="back" size={16} />Pernambuco</button></div></>
   } else if (!city) {
     card = <><p className="kicker">Arco 1 · escolha um ponto</p><h3>Escolha uma cidade</h3>
       <p>Toque num ponto azul. Os pontos com cadeado ao lado ainda estão bloqueados. Cidades concluídas aparecem com uma bandeirinha no lugar do ponto.</p>
       <div className="pe-row"><span>Selos de rota: {seals}/{SEALS.length}</span></div>
-      <div className="pe-acts"><button className="btn alt" onClick={back}>◀ Estado inteiro</button></div></>
+      <div className="pe-acts"><button className="btn alt" onClick={back}><Icon name="back" size={16} />Estado inteiro</button></div></>
   } else { const st = states[city.code]
     const why = st !== 'locked' ? '' : city.code === FINAL ? ` Bloqueada: precisa dos selos de ${SEALS.map(s => cityOf(s)!.name).join(', ').replace(/, ([^,]*)$/, ' e $1')} (${seals}/${SEALS.length}).` : ` Bloqueada: conclua ${prevOf(city.code).map(x => cityOf(x)!.name).join(' ou ')}.`
     card = <><p className="kicker">Arco 1 · escolha um ponto</p><h3>{city.title}</h3>{city.inclui && <p className="inclui">{city.inclui}</p>}
@@ -202,12 +204,13 @@ export default function StateMap({ progress, initialView = 'overview', onArea, o
       <p>{city.blurb}{why}</p>
       <div className="pe-row"><span className={'pe-pill ' + st}>{ST_TXT[st]}</span><span>{st === 'done' ? `Você ganhou: ${rewardOf(city)}` : `Ao concluir: ${rewardOf(city)}`}</span></div>
       {msg && <p role="status">{msg}</p>}
-      <div className="pe-acts"><button className="btn" disabled={st === 'locked'} onClick={enter}>Entrar</button><button className="btn alt" onClick={back}>◀ Estado inteiro</button></div></>
+      <div className="pe-acts"><button className="btn" disabled={st === 'locked'} onClick={enter}>Entrar</button><button className="btn alt" onClick={back}><Icon name="back" size={16} />Estado inteiro</button></div></>
   }
 
   return (
-    <main className="statemap">
-      <header className="map-top"><button className="btn alt" onClick={back}>◀ Voltar</button><h1>PERNAMBUCO</h1></header>
+    <main className="statemap vp-backdrop">
+      <Stripes corner="tr" size="sm" />
+      <header className="map-top"><button className="btn alt sm" onClick={back}><Icon name="back" size={16} />Voltar</button><div className="scr-head"><h1 className="vp-h1">Pernambuco</h1><p className="vp-sub">{SUB[view]}</p></div></header>
       <div className="pe">
         <canvas ref={cv} width={W} height={H} tabIndex={0} aria-label="Mapa de Pernambuco: escolha uma região, depois um ponto de cidade e uma área" onMouseMove={onMove} onMouseLeave={() => { setHov(null); setAHov(null) }} onClick={onClick} onKeyDown={onKey} />
         <p className="pe-hint">{err || (D ? HINT[view] : 'Carregando…')}</p>

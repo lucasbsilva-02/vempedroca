@@ -12,8 +12,14 @@ import type { Area } from './geo'
 import { CHARS, otherChar, loadChar, type CharId } from './game/characters'
 import { LEVELS, labelOf, isUnlocked, nextOf } from './catalog'
 import { ASSETS } from './game/assets'
+import { Arcs, Blocks, Icon, Stars, Stripes, Waves } from './ui/Brand'
 
 const A = '/assets/original/'
+const M = '/assets/marca/'
+/** retrato em pixel (64×64) e ilustração oficial do pitch de cada personagem */
+const FACE: Record<CharId, string> = { pedroca: A + 'personagens/pedrocaportrait.png', renata: A + 'personagens/renataportrait.png' }
+const ART: Record<CharId, string> = { pedroca: M + 'pedroca-ilustracao.png', renata: M + 'renata-ilustracao.png' }
+const COIN = A + 'personagens/peso-prata-animation2.png'
 type Modal =
   | { kind: 'info'; o: LevelObject } | { kind: 'q'; o: LevelObject } | { kind: 'boss' } | { kind: 'pause' } | { kind: 'leave' }
   | { kind: 'win'; stars: number; score: number; cordel: boolean; artifact: boolean } | { kind: 'cordel'; o: LevelObject } | null
@@ -125,58 +131,74 @@ function Play({ level, label, hero, onExit, onWin, onRestart, onNext }: { level:
 
   return (
     <div className={'game' + (touch ? ' touch' : '')}>
-      <header className="hud">
-        <span className="chip">{label}</span>
-        <span className="chip lives" title="Vidas">♥ {hud.lives}</span>
-        <span className="chip" title="Pesos de prata">● {hud.coins}/{nCoins}</span>
-        <span className="chip" title="Blocos ? respondidos">? {answered}/{nBlocks}</span>
-        <span className="chip pts">{hud.score} PTS</span>
-        {boss && !goal && <span className="chip boss">{level.boss.name.toUpperCase()}</span>}
-        {goal && <span className="chip goal" title="Objetivo: chegar à estação de ônibus">→ ESTAÇÃO</span>}
-        {hasCordel && <span className={'chip' + (cordel ? ' cordel' : '')} title="Cordel escondido desta fase">{cordel ? '✦ CORDEL' : '✧ CORDEL ?'}</span>}
-        {power && <span className="chip power" title="Power-up: todas as moedas">{hero === 'pedroca' ? 'PEDROCA RATÃO' : 'RENATA RATA'}</span>}
-        {touch && canFull() && <button className="full" type="button" title="Tela cheia" aria-label="Tela cheia" onClick={goFull}>⛶</button>}
-        <button className="pause" type="button" disabled={!!modal} title={modal ? 'Feche o painel aberto para pausar' : 'Pausar (Esc)'} onClick={() => { if (modal) return; scene.current?.freeze(); setModal({ kind: 'pause' }) }}>II PAUSA</button>
+      <header className="hud" aria-label="Situação da fase">
+        <div className="hud-id"><img className="hud-face" src={FACE[hero]} alt={CHARS[hero].name} /><span className="hud-lv">{label}</span><span className="hud-name">{level.title}</span></div>
+        <ul className="hud-stats">
+          <li className="hud-lives" title="Vidas" aria-label={`Vidas: ${hud.lives} de 3`}>{[0, 1, 2].map(i => <Icon key={i} name="heart" size={18} className={i < hud.lives ? '' : 'off'} />)}</li>
+          <li title="Pesos de prata" aria-label={`Pesos de prata: ${hud.coins} de ${nCoins}`}><span className="hud-coin" style={{ backgroundImage: `url("${COIN}")` }} aria-hidden /><b>{hud.coins}</b><small>/{nCoins}</small></li>
+          <li title="Blocos ? respondidos" aria-label={`Blocos respondidos: ${answered} de ${nBlocks}`}><Icon name="qblock" size={16} /><b>{answered}</b><small>/{nBlocks}</small></li>
+          <li className="hud-pts" title="Pontos" aria-label={`${hud.score} pontos`}><b>{hud.score}</b><small>pts</small></li>
+          {hasCordel && <li className={'hud-cordel' + (cordel ? ' got' : '')} title="Cordel escondido desta fase"><img src={A + 'provisorio/cordel.png'} alt="" /><span>{cordel ? 'Cordel!' : 'Cordel ?'}</span></li>}
+        </ul>
+        <div className="hud-goals">
+          {boss && !goal && <span className="hud-flag boss"><img src={A + 'chefao/rataobossportrait.png'} alt="" />{level.boss.name}</span>}
+          {goal && <span className="hud-flag goal" title="Objetivo: chegar à estação de ônibus"><Icon name="bus" size={16} />Vá até a estação</span>}
+          {power && <span className="hud-flag power" title="Power-up: todas as moedas">{hero === 'pedroca' ? 'Pedroca Ratão' : 'Renata Rata'}</span>}
+        </div>
+        {touch && canFull() && <button className="hud-btn full" type="button" title="Tela cheia" aria-label="Tela cheia" onClick={goFull}><Icon name="full" size={16} /></button>}
+        <button className="hud-btn pause" type="button" disabled={!!modal} title={modal ? 'Feche o painel aberto para pausar' : 'Pausar (Esc)'} onClick={() => { if (modal) return; scene.current?.freeze(); setModal({ kind: 'pause' }) }}><Icon name="pause" size={16} /><span>Pausa</span></button>
       </header>
+      <Waves className="hud-waves" height={10} />
       <div className={'stage' + (intro ? ' cine' : '')} ref={stage}>
         <div className="cv" ref={host} />
-        {touch && !portraitOk && <div className="rotate" role="status"><p><b>Gire o celular</b> para jogar deitado: a tela fica maior.</p><button className="btn alt" type="button" onClick={() => setPortraitOk(true)}>Jogar assim mesmo</button></div>}
-        {toast && !open && <div className="banner">{toast}</div>}
-        {tip && !open && <div className="tip" role="status"><img src={otherChar(hero) === 'renata' ? '/assets/original/ui/ren_portrait.png' : '/assets/original/ui/ped_portrait.png'} alt="" /><div><b>{tip.who}</b><p>{tip.text}</p></div></div>}
-        {err && <div className="banner err">{err}</div>}
+        {touch && !portraitOk && <div className="rotate" role="status"><Stripes corner="tr" size="sm" /><p><b>Gire o celular</b> para jogar deitado: a tela fica maior.</p><button className="btn alt" type="button" onClick={() => setPortraitOk(true)}>Jogar assim mesmo</button></div>}
+        {toast && !open && <div className="banner" role="status">{toast}</div>}
+        {tip && !open && <div className="tip" role="status"><img src={FACE[otherChar(hero)]} alt="" /><div className="tip-say"><b>{tip.who}</b><p>{tip.text}</p></div></div>}
+        {err && <div className="banner err" role="alert">{err}</div>}
         {open && <div className="scrim">
-          {modal?.kind === 'info' && <div className="panel" role="dialog"><div className="who">
+          {modal?.kind === 'info' && <div className={'panel talk ' + (modal.o.type === 'npc' ? 'npc' : 'sign')} role="dialog" aria-label={modal.o.title}><div className="who">
             <img src={A + (modal.o.type === 'npc' ? 'personagens/guarda-pitombaportrait1.png' : (modal.o.asset && ASSETS[modal.o.asset] ? ASSETS[modal.o.asset][0] : 'plataformas_objetos/placa.png'))} alt="" />
-            <div><p className="kicker">{modal.o.type === 'npc' ? 'Guarda-Pitomba' : 'Placa'}</p><h2>{modal.o.title}</h2></div></div>
+            <div><p className="kicker">{modal.o.type === 'npc' ? 'Guarda-Pitomba diz' : 'Placa'}</p><h2>{modal.o.title}</h2></div></div>
             <p>{modal.o.text}</p><div className="acts"><button className="btn" onClick={close} autoFocus>Continuar</button></div></div>}
           {modal?.kind === 'q' && modal.o.question && <Quiz title={modal.o.title ?? 'Bloco ?'} questions={[modal.o.question]} need={1}
             onDone={r => { done.current.add(modal.o.id); firstTry.current += r.firstTry; setAnswered(done.current.size); scene.current?.markAnswered(modal.o.id); scene.current?.addScore(20); close() }} />}
           {modal?.kind === 'boss' && <Quiz title={`Chefão: ${level.boss.name}`} intro={level.boss.intro} portrait={A + 'chefao/rataobossportrait.png'} questions={level.boss.questions} need={level.boss.requiredCorrect} variant="boss" onCorrect={() => scene.current?.attackBoss(bossHits.current++)}
             onDone={r => { firstTry.current += r.firstTry; scene.current?.addScore(50); setModal(null); scene.current?.defeatBoss() }} />}
-          {modal?.kind === 'pause' && <div className="panel" role="dialog"><p className="kicker">Pausa</p><h2>{level.title}</h2><p>{level.narrative}</p>
-            <div className="acts col"><button className="btn" onClick={close} autoFocus>Continuar</button>
-              <button className="btn alt" onClick={() => { const v = !snd; setSnd(v); saveSound(v); if (scene.current) scene.current.muted = !v }}>Som: {snd ? 'ligado' : 'desligado'}</button>
-              <button className="btn alt" onClick={onRestart}>Recomeçar fase</button>
-              <button className="btn alt" onClick={() => setModal({ kind: 'leave' })}>Voltar ao mapa</button></div></div>}
-          {modal?.kind === 'leave' && <div className="panel" role="dialog"><p className="kicker">Sair da fase?</p><h2>O progresso desta fase será perdido</h2><p>Moedas, perguntas e checkpoints só são salvos quando você conclui a fase.</p>
-            <div className="acts"><button className="btn" onClick={() => setModal({ kind: 'pause' })} autoFocus>Continuar jogando</button><button className="btn alt" onClick={onExit}>Sair para o mapa</button></div></div>}
-          {modal?.kind === 'cordel' && <div className="panel" role="dialog"><div className="who"><img src={A + 'provisorio/cordel.png'} alt="" />
+          {modal?.kind === 'pause' && <div className="panel pausebox" role="dialog" aria-label="Pausa"><Waves className="pause-waves" height={12} />
+            <div className="pause-l"><p className="kicker">Pausa · fase {label}</p><h2>{level.title}</h2><p>{level.narrative}</p></div>
+            <div className="acts col"><button className="btn go" onClick={close} autoFocus><Icon name="play" size={18} />Continuar</button>
+              <button className="btn alt" aria-pressed={snd} onClick={() => { const v = !snd; setSnd(v); saveSound(v); if (scene.current) scene.current.muted = !v }}><Icon name={snd ? 'sound' : 'mute'} size={18} />Som: {snd ? 'ligado' : 'desligado'}</button>
+              <button className="btn alt" onClick={onRestart}><Icon name="restart" size={18} />Recomeçar fase</button>
+              <button className="btn alt" onClick={() => setModal({ kind: 'leave' })}><Icon name="map" size={18} />Voltar ao mapa</button></div></div>}
+          {modal?.kind === 'leave' && <div className="panel warn" role="dialog" aria-label="Sair da fase?"><p className="kicker">Sair da fase?</p><h2>O progresso desta fase será perdido</h2><p>Moedas, perguntas e checkpoints só são salvos quando você conclui a fase.</p>
+            <div className="acts"><button className="btn go" onClick={() => setModal({ kind: 'pause' })} autoFocus>Continuar jogando</button><button className="btn alt" onClick={onExit}>Sair para o mapa</button></div></div>}
+          {modal?.kind === 'cordel' && <div className="panel cordelbox" role="dialog" aria-label={'Cordel: ' + modal.o.title}><div className="who"><img src={A + 'provisorio/cordel.png'} alt="" />
             <div><p className="kicker">Cordel encontrado! +100</p><h2>{modal.o.title}</h2></div></div>
             <p className="verso">{modal.o.text}</p><div className="acts"><button className="btn" onClick={close} autoFocus>Guardar o cordel</button></div></div>}
-          {modal?.kind === 'win' && <div className="panel" role="dialog"><p className="kicker">Fase concluída</p><h2>Vitória! {'★'.repeat(modal.stars)}{'☆'.repeat(3 - modal.stars)}</h2>
-            <p>Pontuação: {modal.score}</p>
-            {level.artifact && <p className="artefato"><img src={A + 'provisorio/artefato.png'} alt="" /> <span><b>Artefato recuperado:</b> {level.artifact.name}. {level.artifact.text}</span></p>}
-            {hasCordel && <p>{modal.cordel ? '✦ Cordel desta fase encontrado!' : '✧ O cordel desta fase continua escondido. Que tal procurar?'}</p>}{level.boss.final && level.boss.ending && <p className="artefato"><span><b>Fim da aventura no Recife!</b> {level.boss.ending}</span></p>}<p><b>O que você aprendeu:</b> {level.objective}</p><div className="acts">{onNext && <button className="btn" onClick={onNext} autoFocus>Próxima fase</button>}<button className="btn alt" onClick={onExit}>Voltar ao mapa</button></div></div>}
+          {modal?.kind === 'win' && <div className="panel winbox" role="dialog" aria-label="Fase concluída">
+            <div className="win-art" aria-hidden><Arcs /><img src={ART[hero]} alt="" /></div>
+            <div className="win-body">
+              <p className="kicker">Fase {label} · {level.discipline}</p>
+              <h2 className="win-title"><span>Fase</span> <span>concluída!</span></h2>
+              <div className="win-score"><Stars n={modal.stars} size={40} /><p><b>{modal.score}</b> pontos</p></div>
+              <ul className="win-loot" aria-label="Conquistas">
+                {level.artifact && <li className="got"><img src={A + 'provisorio/artefato.png'} alt="" /><span><b>Artefato recuperado</b>{level.artifact.name}. {level.artifact.text}</span></li>}
+                {hasCordel && <li className={modal.cordel ? 'got' : 'miss'}><img src={A + 'provisorio/cordel.png'} alt="" /><span><b>{modal.cordel ? 'Cordel encontrado!' : 'Cordel escondido'}</b>{modal.cordel ? 'Ele já está na sua coleção.' : 'O cordel desta fase continua escondido. Que tal procurar?'}</span></li>}
+                {level.boss.final && level.boss.ending && <li className="got final"><Icon name="trophy" size={34} /><span><b>Fim da aventura no Recife!</b>{level.boss.ending}</span></li>}
+              </ul>
+              <p className="win-learn"><Icon name="bulb" size={22} /><span><b>O que você aprendeu:</b> {level.objective}</span></p>
+              <div className="acts">{onNext && <button className="btn go" onClick={onNext} autoFocus>Próxima fase<Icon name="arrow" size={18} /></button>}<button className="btn alt" onClick={onExit} autoFocus={!onNext}><Icon name="map" size={18} />Voltar ao mapa</button></div>
+            </div></div>}
         </div>}
       </div>
       {!touch && <footer className="keys" aria-label="Controles">
         <span><img src="/assets/ui/keys-arrows.png" alt="Setas" /><img src="/assets/ui/keys-wasd.png" alt="WASD" /> andar</span>
         <span><img src="/assets/ui/key-space.png" alt="Espaço" /> pular</span>
-        <span><kbd>F</kbd> interagir · ESC pausa</span>
+        <span><kbd>F</kbd> interagir</span><span><kbd>Esc</kbd> pausa</span>
       </footer>}
       {touch && <div className="pad" onContextMenu={e => e.preventDefault()}>
         <div className="pad-dir" ref={dir} {...dirProps}><span className="pb">◀</span><span className="pb">▶</span></div>
-        <div className="pad-r">{climbs && <button className="pb down" type="button" aria-label="Descer do cipó" {...downProps}>▼</button>}{near && <button className="pb act" type="button" onPointerDown={e => { e.preventDefault(); scene.current?.interact() }}>INTERAGIR</button>}<button className="pb jump" type="button" {...jumpProps}>PULAR</button></div>
+        <div className="pad-r">{climbs && <button className="pb down" type="button" aria-label="Descer do cipó" {...downProps}>▼</button>}{near && <button className="pb act" type="button" onPointerDown={e => { e.preventDefault(); scene.current?.interact() }}>Interagir</button>}<button className="pb jump" type="button" {...jumpProps}>Pular</button></div>
       </div>}
     </div>)
 }
@@ -196,14 +218,26 @@ export default function App() {
   if (screen === 'city') return <Overworld cityId={city} progress={prog} hero={hero} initialArea={area} onArea={setArea} onPlay={start} onBack={() => { setMapView('recife'); setScreen('state') }} onList={() => { if (!area) setArea(null); setScreen('map') }} />
   if (screen === 'map') return <WorldMap progress={prog} sound={sound} onSound={() => { const v = !sound; setSound(v); saveSound(v) }} onPlay={start} onBack={() => setScreen('city')} backLabel={'◀ Mapa 2.5D'} title={(area?.name ?? 'Recife').toUpperCase()} worldIds={area ? [area.worldId] : undefined} />
   const done = LEVELS.filter(l => prog.levels[l.id]?.done).length, total = LEVELS.reduce((n, l) => n + (prog.levels[l.id]?.stars ?? 0), 0)
+  const arts = LEVELS.filter(l => prog.levels[l.id]?.artifact).length, cords = LEVELS.filter(l => prog.levels[l.id]?.cordel).length
   return (
-    <main className="title">
-      <div className="sky" />
-      <img className="logo" src="/assets/original/ui/logo_crop.png" alt="Vem Pedroca" />
-      <p className="sub">Aventura educacional por Pernambuco</p>
-      <img className="hero" src={A + (hero === 'renata' ? 'personagens/ren_idle1.png' : 'personagens/NEW-pedroca-idle-animation1.png')} alt={CHARS[hero].name} />
-      <button className="start" onClick={() => setScreen('select')} aria-label="Jogar"><img src="/assets/ui/start-btn.png" alt="START" /></button>
-      <div className="card"><p className="kicker">Recife é a primeira região</p><h2>{done}/{LEVELS.length} fases concluídas</h2><p className="stars">{total > 0 ? `${total} estrelas` : 'Nenhuma estrela ainda'}</p>
-        <p className="stars">Artefatos recuperados: {LEVELS.filter(l => prog.levels[l.id]?.artifact).length}/{LEVELS.length} · Cordéis: {LEVELS.filter(l => prog.levels[l.id]?.cordel).length}/{LEVELS.length}</p></div>
+    <main className="title vp-backdrop">
+      <div className="title-city" aria-hidden>{CITY_ROW.map((k, i) => <img key={i} src={A + ASSETS[k][0]} alt="" />)}</div>
+      <Stripes corner="tr" size="lg" /><Blocks a="blue" b="yellow" pos="tl" /><Blocks a="red" b="green" pos="br" />
+      <img className="title-art ren" src={ART.renata} alt="Renata" />
+      <img className="title-art ped" src={ART.pedroca} alt="Pedroca" />
+      <div className="title-center">
+        <img className="logo" src="/assets/original/ui/logo_crop.png" alt="Vem Pedroca" />
+        <p className="vp-sub title-tag">Aventura educacional por Pernambuco</p>
+        <button className="btn hot xl start" onClick={() => setScreen('select')}><Icon name="play" size={26} />Jogar</button>
+        <ul className="title-stats" aria-label="Seu progresso">
+          <li><Icon name="trophy" size={20} /><b>{done}/{LEVELS.length}</b> fases</li>
+          <li><Icon name="star" size={20} /><b>{total}</b> {total === 1 ? 'estrela' : 'estrelas'}</li>
+          <li><img src={A + 'provisorio/artefato.png'} alt="" /><b>{arts}/{LEVELS.length}</b> artefatos</li>
+          <li><img src={A + 'provisorio/cordel.png'} alt="" /><b>{cords}/{LEVELS.length}</b> cordéis</li>
+        </ul>
+        <p className="title-hint">O Recife é a primeira região da aventura</p>
+      </div>
     </main>)
 }
+/** fachadas desfocadas do próprio jogo, como no fundo da capa do pitch */
+const CITY_ROW = ['pred1', 'sinagoga', 'pred3', 'pred5', 'cinema', 'pred6', 'pred7', 'pred8', 'pred2']

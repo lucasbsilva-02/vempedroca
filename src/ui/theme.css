@@ -1,0 +1,103 @@
+/* =====================================================================
+   Vem Pedroca — design system (tokens + componentes base)
+   Fonte: pitch oficial (cores amostradas das páginas e do logotipo; fontes do PDF).
+   Guia de uso: docs/design-system.md
+   ===================================================================== */
+:root{
+  /* cor — marca */
+  --vp-coral:#ff5757;   /* títulos do pitch (só em texto grande ≥ 24 px bold) */
+  --vp-red:#ce1e24;     /* "V" do logo, blocos; botão principal (texto branco 5,6:1) */
+  --vp-red-d:#9e151a;
+  --vp-blue:#4aa3df;    /* subtítulos e fundo do pitch; texto preto por cima */
+  --vp-blue-d:#1b62a3;  /* azul para texto sobre branco (5,9:1) */
+  --vp-cyan:#0cc0df;    /* faixas diagonais; foco */
+  --vp-yellow:#f8d44a;  /* faixas e blocos */
+  --vp-amber:#fcba12;   /* "m" do logo; bloco ? */
+  --vp-green:#22b61e;   /* bloco "Pedroca" do logo */
+  --vp-green-d:#12780f; /* verde para texto e botão de confirmar (texto branco 5,4:1) */
+  --vp-purple:#7a4fc4;  /* onda roxa da camiseta */
+  /* cor — base */
+  --vp-paper:#ffffff; --vp-cream:#fff6d6; --vp-trail:#fdf1c4; --vp-sand:#efe6cf;
+  --vp-ink:#14181e;     /* texto e contornos (o "preto" das ilustrações) */
+  --vp-ink-2:#232a33; --vp-muted:#4d5560; --vp-mute-2:#8c8577; --vp-off:#d9d3c4;
+  /* cor — estados (sempre com ícone ou texto junto: nunca só a cor) */
+  --vp-ok-bg:#e2f5df; --vp-bad-bg:#ffe5e2; --vp-hint-bg:#fff6d6; --vp-info-bg:#e3f2fc;
+  /* tipografia */
+  --f-title:"League Spartan","Montserrat",system-ui,sans-serif;  /* títulos: caixa alta, forte */
+  --f-body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif; /* textos, perguntas, diálogos */
+  --f-pix:"Silkscreen",ui-monospace,monospace;                    /* números do HUD e rótulos em pixel */
+  --t-hero:clamp(34px,6vw,64px); --t-h1:clamp(24px,3.4vw,38px); --t-h2:clamp(20px,2.4vw,26px); --t-h3:18px;
+  --t-body:16px; --t-small:14px; --t-tag:12px;
+  /* forma */
+  --bw:3px; --r:4px; --r-balloon:16px; --lift:4px;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --focus:0 0 0 3px var(--vp-paper),0 0 0 6px var(--vp-cyan);
+  /* aliases usados pelo código antigo */
+  --pix:var(--f-pix); --body:var(--f-body); --amarelo:var(--vp-amber); --tinta:var(--vp-ink);
+}
+
+/* ---------- títulos e textos ---------- */
+.vp-h1,.vp-h2{font-family:var(--f-title);font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1;margin:0;color:var(--vp-coral)}
+.vp-h1{font-size:var(--t-h1)}.vp-h2{font-size:var(--t-h2)}
+.vp-sub{font-family:var(--f-title);font-weight:800;text-transform:uppercase;color:var(--vp-blue-d);font-size:clamp(14px,1.6vw,18px);margin:0;letter-spacing:.02em}
+.vp-blocktitle{display:flex;flex-wrap:wrap;gap:6px;margin:0;font-family:var(--f-title);font-weight:900;text-transform:uppercase;line-height:1}
+.vp-blocktitle span{display:inline-block;padding:.12em .28em .02em;border:var(--bw) solid var(--vp-ink);color:#fff;transform:rotate(var(--r,0deg));box-shadow:3px 3px 0 var(--vp-ink)}
+.vp-blocktitle .t-yellow,.vp-blocktitle .t-amber,.vp-blocktitle .t-paper,.vp-blocktitle .t-cyan,.vp-blocktitle .t-blue{color:var(--vp-ink)}
+
+/* tons reutilizáveis */
+.t-coral{background:var(--vp-coral)}.t-red{background:var(--vp-red)}.t-blue{background:var(--vp-blue)}.t-cyan{background:var(--vp-cyan)}
+.t-yellow{background:var(--vp-yellow)}.t-amber{background:var(--vp-amber)}.t-green{background:var(--vp-green)}.t-purple{background:var(--vp-purple)}
+.t-ink{background:var(--vp-ink)}.t-paper{background:var(--vp-paper)}
+
+/* etiqueta (kicker): bloco de cor levemente torto, como as letras do logo */
+.vp-tag,.kicker{display:inline-flex;align-items:center;gap:6px;width:max-content;max-width:100%;margin:0;padding:3px 8px 2px;border:2px solid var(--vp-ink);
+  background:var(--tag,var(--vp-yellow));color:var(--tag-ink,var(--vp-ink));font-family:var(--f-title);font-weight:800;font-size:var(--t-tag);letter-spacing:.06em;text-transform:uppercase;line-height:1.2;transform:rotate(-1.2deg)}
+
+/* ---------- botões ----------
+   principal (.btn): vermelho do logo · secundário (.btn.alt): papel · confirmar (.btn.go): verde · destaque (.btn.hot): amarelo
+   todos: contorno preto, sombra dura deslocada (afunda ao apertar), foco ciano */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 18px 8px;border:var(--bw) solid var(--vp-ink);border-radius:var(--r);
+  background:var(--vp-red);color:#fff;font-family:var(--f-title);font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;line-height:1.05;text-align:center;
+  box-shadow:var(--lift) var(--lift) 0 var(--vp-ink);transition:transform .07s ease,box-shadow .07s ease,background-color .12s}
+.btn:hover:not(:disabled){transform:translate(-1px,-1px);box-shadow:calc(var(--lift) + 1px) calc(var(--lift) + 1px) 0 var(--vp-ink)}
+.btn:active:not(:disabled){transform:translate(3px,3px);box-shadow:1px 1px 0 var(--vp-ink)}
+.btn:focus-visible{outline:none;box-shadow:var(--lift) var(--lift) 0 var(--vp-ink),var(--focus)}
+.btn.alt{background:var(--vp-paper);color:var(--vp-ink)}.btn.alt:hover:not(:disabled){background:var(--vp-cream)}
+.btn.go{background:var(--vp-green-d)}
+.btn.hot{background:var(--vp-yellow);color:var(--vp-ink)}
+.btn.sm{min-height:40px;padding:7px 12px 5px;font-size:14px}
+.btn.xl{min-height:60px;padding:12px 28px 10px;font-size:22px}
+.btn[aria-pressed="false"]{background:var(--vp-sand)}
+.btn:disabled{cursor:not-allowed;color:#5f5a50;background:repeating-linear-gradient(-45deg,#e6e0d1 0 6px,#d9d3c4 6px 12px);box-shadow:none;transform:none}
+.btn .vp-icon{flex:none}
+
+/* ---------- painéis ----------
+   papel branco, contorno preto, cantos retos; um par de blocos no canto (vermelho + verde) assina o painel */
+.panel{position:relative;background:var(--vp-paper);color:var(--vp-ink);border:var(--bw) solid var(--vp-ink);border-radius:var(--r);box-shadow:6px 6px 0 rgba(20,24,30,.9);
+  padding:var(--s4) var(--s5) var(--s5);width:min(640px,100%);max-height:100%;overflow:auto;font-family:var(--f-body);font-size:var(--t-body);line-height:1.5;user-select:text;-webkit-user-select:text}
+.panel::after{content:"";position:absolute;right:16px;bottom:-3px;width:54px;height:9px;background:linear-gradient(90deg,var(--vp-red) 0 68%,transparent 68% 76%,var(--vp-green) 76%);pointer-events:none}
+.panel h2{font-family:var(--f-title);font-weight:800;font-size:var(--t-h2);line-height:1.05;margin:8px 0 6px;color:var(--vp-coral);text-transform:uppercase}
+.panel p{margin:8px 0}
+.acts{display:flex;gap:12px;margin-top:var(--s4);flex-wrap:wrap;align-items:center}.acts.col{flex-direction:column;align-items:stretch}
+
+/* ---------- decoração ---------- */
+.vp-stripes{position:absolute;pointer-events:none;overflow:hidden;z-index:0;width:var(--sw,230px);height:var(--sw,230px)}
+.vp-stripes.sm{--sw:120px}.vp-stripes.lg{--sw:320px}
+.vp-stripes.tr{top:0;right:0}.vp-stripes.bl{bottom:0;left:0;transform:rotate(180deg)}.vp-stripes.br{bottom:0;right:0;transform:scaleY(-1)}.vp-stripes.tl{top:0;left:0;transform:scaleX(-1)}
+.vp-stripes i{position:absolute;height:15%;width:150%;left:-6%;transform-origin:0 0;transform:rotate(45deg)}
+.vp-stripes .c1{background:var(--vp-cyan);top:-14%;left:12%}.vp-stripes .c2{background:var(--vp-coral);top:-30%;left:36%;height:17%}.vp-stripes .c3{background:var(--vp-yellow);top:-44%;left:60%}
+.vp-blocks{position:absolute;display:flex;gap:10px;pointer-events:none;z-index:0}
+.vp-blocks i{display:block;height:var(--bh,64px)}.vp-blocks i:first-child{width:calc(var(--bh,64px) * 1.15)}.vp-blocks i:last-child{width:calc(var(--bh,64px) * .34)}
+.vp-trails{position:absolute;color:var(--vp-trail);pointer-events:none;z-index:0}
+.vp-waves{display:block;width:100%}
+.vp-arcs{position:absolute;pointer-events:none}
+.vp-icon{display:inline-block;vertical-align:middle;image-rendering:pixelated}
+.vp-stars{display:inline-flex;gap:3px;align-items:center}
+.vp-backdrop{position:relative;isolation:isolate;background:var(--vp-paper);color:var(--vp-ink);overflow:hidden}
+.vp-backdrop>.vp-trails.tr-a{left:-40px;bottom:-30px;width:min(520px,60vw);height:min(390px,45vh);transform:scaleX(-1)}
+.vp-backdrop>.vp-trails.tr-b{right:-20px;bottom:-20px;width:min(460px,50vw);height:min(340px,40vh)}
+.vp-backdrop>:where(:not(.vp-trails,.vp-stripes,.vp-blocks)){position:relative;z-index:1}
+
+/* foco visível em tudo que é clicável */
+:where(a,button,[role="button"],[tabindex]):focus-visible{outline:3px solid var(--vp-cyan);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}

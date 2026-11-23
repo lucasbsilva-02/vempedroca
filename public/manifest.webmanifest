@@ -5,8 +5,8 @@
  "start_url": "/",
  "display": "fullscreen",
  "orientation": "landscape",
- "background_color": "#14001d",
- "theme_color": "#14001d",
+ "background_color": "#ffffff",
+ "theme_color": "#14181e",
  "icons": [
   {
    "src": "/assets/original/ui/ped_portrait.png",

@@ -14,6 +14,11 @@ Parâmetros de teste: `?map` abre o mapa, `?play` ou `?play=<id>` abre uma fase,
 - Dicas do mapa dizem "Toque" em vez de "Clique".
 - **Publicado na Vercel** (projeto `vem-pedroca`), com Vercel Authentication: só quem entra na conta da Vercel da equipe abre o jogo. Cada push no `main` publica de novo.
 
+## Redesign de UX/UI pela identidade do pitch
+- Toda a interface (tela inicial, personagem, mapas, Recife 2.5D, modo lista, HUD, diálogos, perguntas, pausa, cordel e vitória) segue agora a marca do pitch oficial: papel branco, faixas diagonais, blocos, ondas da camiseta, arcos, League Spartan e Montserrat, botões com contorno e sombra dura. Guia em `docs/design-system.md`.
+- Ilustrações oficiais de Pedroca e Renata (extraídas do pitch, sem retoque) em `public/assets/marca/`, usadas na tela inicial, na escolha de personagem e na vitória.
+- Nenhuma regra de jogo mudou: física, fases, perguntas, progressão e salvamento estão como antes.
+
 ## v0.2 do mapa (revisão REC-AREA01, 13/11/2026)
 - Mapa de Pernambuco e de Recife trocados pelo conceito aprovado (5 mesorregiões, seleção por pontos, regiões bloqueadas em cinza) e regras de rota, selo e carimbo. Uma linha por item em `docs/CHANGELOG-v0.2.md`; registro da revisão e perguntas em aberto em `docs/revisao-REC-AREA01.md`.
 - Parâmetros de teste: `?map` abre o estado inteiro; `?city` abre o mapa de Recife.

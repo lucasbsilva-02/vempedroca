@@ -4,6 +4,7 @@ import { cityOf, areaState, type Area } from './geo'
 import { ASSETS } from './game/assets'
 import { CHARS, centerOffset, type CharId } from './game/characters'
 import type { Level, Progress } from './types'
+import { Icon, Stars } from './ui/Brand'
 
 /* Seletor 2.5D (v7) — "Recife em miniatura".
    Um plano inclinado (CSS 3D) funciona como maquete: terreno, rio Capibaribe, mar, praças e ruas são desenhados no chão (SVG);
@@ -275,19 +276,19 @@ export default function Overworld({ progress, hero, cityId, initialArea, onArea,
       <div className="ow-fg" aria-hidden style={{ transform: `translateX(${-(cam.x % 2000) * 0.12}px)` }}><Sprite k="mato1" s={6} className="fg l" /><Sprite k="mato3" s={6} className="fg r" flip /></div>
 
       <header className="ow-top">
-        <button className="btn alt" onClick={back}>◀ {area ? city.name : 'Pernambuco'}</button>
+        <button className="btn alt sm" onClick={back}><Icon name="back" size={16} />{area ? city.name : 'Pernambuco'}</button>
         <div className="ow-title"><p className="kicker">{crumbs}</p><h1>{area ? area.name : city.name}</h1></div>
-        <button className="btn alt" onClick={onList}>Modo lista</button>
+        <button className="btn alt sm" onClick={onList}>Modo lista</button>
       </header>
       <section className={'ow-card ' + curN.state} aria-live="polite" style={{ ['--wc' as string]: curN.color }}>
         <p className="chip-state">{stateTxt[curN.state]}</p>
         <h2>{curN.title}</h2><p className="ow-sub">{curN.sub}</p>
-        {curN.state === 'done' && curN.stars !== undefined && <p className="stars">{stars(curN.stars)} · melhor: {curN.score} pts</p>}
-        <button className="btn" disabled={curN.state === 'soon' || curN.state === 'locked' || pt.moving} onClick={enter}>{coarse ? 'Entrar' : 'F — Entrar'}</button>
+        {curN.state === 'done' && curN.stars !== undefined && <p className="stars"><Stars n={curN.stars} size={18} /> melhor: {curN.score} pts</p>}
+        <button className="btn go" disabled={curN.state === 'soon' || curN.state === 'locked' || pt.moving} onClick={enter}><Icon name="play" size={18} />{coarse ? 'Entrar' : 'Entrar (F)'}</button>
         {msg && <p className="ow-msg" role="status">{msg}</p>}
       </section>
       <ul className="ow-legend" aria-label="Legenda">
-        <li className="done">Concluída</li><li className="open">Disponível</li><li className="locked">Bloqueada</li><li className="soon">Em breve</li>
+        <li className="done"><Icon name="flag" size={14} />Concluída</li><li className="open"><Icon name="play" size={14} />Disponível</li><li className="locked"><Icon name="lock" size={14} />Bloqueada</li><li className="soon"><span className="soon-dot" aria-hidden>…</span>Em breve</li>
       </ul>
       <div className="ow-pad" aria-label="Controles do mapa">
         <span /><button className="pb" onPointerDown={e => { e.preventDefault(); go(0, -1) }} aria-label="Cima">▲</button><span />

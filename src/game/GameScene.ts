@@ -233,7 +233,7 @@ export class GameScene extends Phaser.Scene {
     const oc = CHARS[otherChar(this.heroId)]
     this.comp = this.add.image(0, 0, oc.idle.key + '1').setOrigin(0.5, 1).setDepth(D.hero - 1)
     this.hero = this.add.image(0, 0, CHARS[this.heroId].idle.key + '1').setOrigin(0.5, 1).setDepth(D.hero)
-    this.prompt = this.add.text(0, 0, '', { fontFamily: '"Silkscreen", monospace', fontSize: '8px', color: '#ffb800', backgroundColor: '#14001d', padding: { x: 4, y: 2 } }).setOrigin(0.5, 1).setDepth(D.fx).setVisible(false)
+    this.prompt = this.add.text(0, 0, '', { fontFamily: '"Silkscreen", monospace', fontSize: '8px', color: '#f8d44a', backgroundColor: '#14181e', padding: { x: 4, y: 2 } }).setOrigin(0.5, 1).setDepth(D.fx).setVisible(false)
     this.fx = new CameraFX(this); this.fx.setBounds(0, 0, this.W, this.R * TILE)
     this.ai = new CompanionAI({
       tile: TILE, deathY: this.R * TILE, worldW: this.W, solids: this.solids,
